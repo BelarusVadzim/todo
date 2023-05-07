@@ -3,15 +3,17 @@ import logo from "../logo.svg";
 import style from "./App.module.scss";
 import { BlueButton } from ".";
 import { BaseButton } from "./base";
-import { Button, Label } from "./atoms";
+import { Button, Checkbox, Label } from "./atoms";
 
 const App: React.FC = () => {
+  console.log("x");
   return (
     <div className={style.app}>
       <header className={style.header}>
         <img src={logo} className={style.logo} alt="logo" />
         <p>
           TODO
+          <Checkbox onToggle={(value) => console.log(value)} />
           <Label>Label test test 1111 2222222</Label>
           <BaseButton>Error Button hhhh 5555 ccfc</BaseButton>
           <Button onClick={() => alert("button")}>New button</Button>
