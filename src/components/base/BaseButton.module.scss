@@ -1,14 +1,14 @@
-.btn {
+.baseButton {
   width: 200px;
   height: 50px;
   font-size: 20px;
   border-radius: 5px;
   margin-top: 20px;
-  background: rgb(199, 23, 23);
+  background: rgb(7, 138, 62);
   color: white;
   border: none;
   
 &:hover {
-    background: rgb(228, 49, 49);
+    background: rgb(161, 250, 183);
   }
 }

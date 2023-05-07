@@ -1,0 +1,11 @@
+@import 'src/variables.scss';
+
+.label {
+  composes: container from "~/src/styles/container.scss";
+
+  font-size: 16px;
+  margin-top: 20px;
+  color: rgb(160, 160, 160); 
+  border: none;
+  font-family: $main-font;
+}

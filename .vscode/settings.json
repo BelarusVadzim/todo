@@ -1,0 +1,6 @@
+{
+    "scss.lint.validProperties": [
+        "composes"
+    ],
+    "editor.formatOnSave": true
+}
