@@ -25,6 +25,7 @@ const App: React.FC = () => {
         >
           Learn React
         </a>
+        <span className="material-icons">check_circle</span>
       </header>
     </div>
   );
