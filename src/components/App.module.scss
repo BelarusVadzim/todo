@@ -1,36 +1,35 @@
-@import './variables.scss';
-@import './styles/';
-.App {
+@import '../variables.scss';
+.app {
   text-align: center;
 }
 
-.App-logo {
+.logo {
   height: 40vmin;
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .logo {
+    animation: logoSpin infinite 20s linear;
   }
 }
 
-.App-header {
-  background-color: $primary-color;
+.header {
+  background-color: $background-color;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(90, 88, 88);
 }
 
-.App-link {
-  color: $secondary-color;
+.link {
+  color: $primary-color;
 }
 
-@keyframes App-logo-spin {
+@keyframes logoSpin {
   from {
     transform: rotate(0deg);
   }

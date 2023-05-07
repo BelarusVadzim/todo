@@ -1,0 +1,18 @@
+@import 'src/variables.scss';
+
+.label {
+  composes: container from "~/src/styles/container.scss";
+
+  font-size: 16px;
+  color: $secondary-font-color;
+  border: none;
+  font-family: $main-font;
+  cursor: default;
+
+  &_lineThrough {
+    @extend .label;
+    text-decoration: line-through;
+    color: $inactive-color;
+  }
+}
+
