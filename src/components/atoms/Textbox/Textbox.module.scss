@@ -1,25 +1,25 @@
 @import 'src/variables.scss';
 
 .textbox {
-  font-size: 16px;
-  color: rgb(80, 80, 80);
+  font-size: $font-size;
+  color: $primary-font-color;
   font-family: $main-font;
   background-color:  transparent;
   caret-color: $primary-color;
   outline: none;
   border: none;
-  border-bottom: 1px solid transparent;
-  animation-name: blinking;
-  animation-duration: 2s;
-  animation-iteration-count: 3;
+  // border-bottom: 1px solid transparent;
+  // animation-name: blinking;
+  // animation-duration: 2s;
+  // animation-iteration-count: 3;
 
-  &:focus {
-    border-bottom: 1px solid $primary-color;
-    }
+  // &:hover {
+  //   border-bottom: 1px solid $primary-color;
+  //   }
 
-  @keyframes blinking {
-    50% {
-      border-color: $primary-color;
-    }
-  }
+  // @keyframes blinking {
+  //   50% {
+  //     border-color: $primary-color;
+  //   }
+  // }
 }

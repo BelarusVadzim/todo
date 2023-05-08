@@ -1,9 +1,27 @@
 @import 'src/variables.scss';
 
-.checkbox {
+.checkbox_base {
+  cursor: pointer;
+  color: $inactive-color;
+}
+
+.checkbox_colored {
+  @extend .checkbox_base;
   background: -webkit-linear-gradient($primary-color, #e058ec);
   -webkit-background-clip: text;
           background-clip: text;
   -webkit-text-fill-color: transparent;
-  cursor: pointer;
+}
+
+.checkbox_checked {
+  font-size: $font-size;
+  @extend .checkbox_colored;
+}
+
+.checkbox_unchecked {
+  @extend .checkbox_base;
+
+  &:hover {
+    @extend .checkbox_colored;
+    }
 }
