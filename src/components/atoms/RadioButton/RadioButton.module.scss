@@ -1,0 +1,25 @@
+.radioButton{
+  /* HIDE RADIO */
+  [type=radio] { 
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  /* NORMAL STYLES */
+  [type=radio] + span {
+    cursor: pointer;
+    color: rgb(158, 156, 156);
+    font-size: 14px;
+  }
+
+  [type=radio] + span:hover {
+    color: rgb(80, 80, 80);
+  }
+
+  /* CHECKED STYLES */
+  [type=radio]:checked + span {
+    color: rgb(66, 175, 226);
+  }
+}
