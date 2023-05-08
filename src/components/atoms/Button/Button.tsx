@@ -1,14 +1,15 @@
-import React, { PropsWithChildren } from "react";
+import React from "react";
 import style from "./Button.module.scss";
 
-type ButtonProps = PropsWithChildren & {
+type ButtonProps = {
+  label: string;
   onClick: () => void;
 };
 
-const Button: React.FC<ButtonProps> = ({ children, onClick }) => (
-  <button onClick={onClick} className={style.button}>
-    {children}
-  </button>
+const Button: React.FC<ButtonProps> = ({ label, onClick }) => (
+  <span onClick={onClick} className={style.button}>
+    {label}
+  </span>
 );
 
 export default Button;
