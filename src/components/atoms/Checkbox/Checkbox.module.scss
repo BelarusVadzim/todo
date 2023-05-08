@@ -1,5 +1,7 @@
+@import 'src/variables.scss';
+
 .checkbox {
-  background: -webkit-linear-gradient(#459bfc, #e058ec);
+  background: -webkit-linear-gradient($primary-color, #e058ec);
   -webkit-background-clip: text;
           background-clip: text;
   -webkit-text-fill-color: transparent;
