@@ -5,8 +5,15 @@
 
   font-size: 16px;
   margin-top: 20px;
-  color: rgb(160, 160, 160); 
+  color: $secondary-font-color;
   border: none;
   font-family: $main-font;
   cursor: default;
+
+  &_lineThrough {
+    @extend .label;
+    text-decoration: line-through;
+    color: $inactive-color;
+  }
 }
+

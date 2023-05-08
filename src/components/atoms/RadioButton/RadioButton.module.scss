@@ -1,3 +1,5 @@
+@import 'src/variables.scss';
+
 .radioButton{
   /* HIDE RADIO */
   [type=radio] { 
@@ -10,16 +12,17 @@
   /* NORMAL STYLES */
   [type=radio] + span {
     cursor: pointer;
-    color: rgb(158, 156, 156);
-    font-size: 14px;
+    color: $secondary-font-color;
+    font-size: 16px;
+    font-family: $main-font;
   }
 
   [type=radio] + span:hover {
-    color: rgb(80, 80, 80);
+    color: $primary-font-color;
   }
 
   /* CHECKED STYLES */
   [type=radio]:checked + span {
-    color: rgb(66, 175, 226);
+    color: $primary-color;
   }
 }

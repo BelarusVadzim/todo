@@ -1,7 +1,7 @@
 @import 'src/variables.scss';
 
 .button {
-  color: rgb(158, 156, 156);
+  color: $secondary-font-color;
   cursor: pointer;
   font-family: $main-font;
   display: block;
