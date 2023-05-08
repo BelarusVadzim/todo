@@ -11,9 +11,10 @@ const App: React.FC = () => {
         TODO
         <Checkbox onToggle={(value) => console.log(value)} />
         <Label>Label</Label>
-        <Button onClick={() => console.log("button")} label="New button" />
+        <Button onClick={() => console.log("button")} value="New button" />
         <RadioGroup onToggle={(val) => console.log(val)} />
         <Textbox onReturn={(text) => console.log(text)} />
+        <Button onClick={() => console.log("button")} value="close" glyph />
       </header>
     </div>
   );
