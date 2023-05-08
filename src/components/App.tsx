@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../logo.svg";
 import style from "./App.module.scss";
-import { Button, Checkbox, Label, RadioGroup } from "./atoms";
+import { Button, Checkbox, Label, RadioGroup, Textbox } from "./atoms";
 
 const App: React.FC = () => {
   return (
@@ -13,6 +13,7 @@ const App: React.FC = () => {
         <Label>Label</Label>
         <Button onClick={() => console.log("button")} label="New button" />
         <RadioGroup onToggle={(val) => console.log(val)} />
+        <Textbox onReturn={(text) => console.log(text)} />
       </header>
     </div>
   );
