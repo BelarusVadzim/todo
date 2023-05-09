@@ -1,8 +1,0 @@
-.blueButton {
-  composes: baseButton from "../base/BaseButton.module.scss";
-  background: rgb(39, 142, 194);
-
-  &:hover {
-    background: rgb(159, 199, 230);
-  }
-}
