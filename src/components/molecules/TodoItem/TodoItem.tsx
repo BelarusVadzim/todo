@@ -1,8 +1,9 @@
 import { Button, Checkbox, Label } from "components/atoms";
 import style from "./TodoItem.module.scss";
 import { TodoNote } from "types";
+import { SortableElement } from "react-sortable-hoc";
 
-type TodoItemProps = {
+export type TodoItemProps = {
   note: TodoNote;
 };
 
@@ -25,4 +26,5 @@ const TodoItem: React.FC<TodoItemProps> = ({ note }) => {
   );
 };
 
-export default TodoItem;
+//export default TodoItem;
+export default SortableElement<TodoItemProps>(TodoItem);
