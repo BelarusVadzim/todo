@@ -1,7 +1,6 @@
-import { TodoItem } from "components/molecules/TodoItem";
 import style from "./TodoItemsList.module.scss";
 import { TodoItemsSection } from "../TodoItemsSection";
-import { PropsWithClassName, TodoNote } from "types";
+import { TodoNote } from "types";
 import { TodoItemsListMenu } from "../TodoItemsListMenu";
 import { arrayMoveImmutable } from "array-move";
 import { useState } from "react";
