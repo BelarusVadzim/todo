@@ -46,7 +46,8 @@
 .todoItemsList{
   composes: container from "~/src/styles/container.scss";
 
-  border: solid 1px blue;
+  //border: solid 1px blue;
+  filter: drop-shadow(0 0 0.2rem rgb(191, 191, 191));
 }
 
 .todoTtitle{
