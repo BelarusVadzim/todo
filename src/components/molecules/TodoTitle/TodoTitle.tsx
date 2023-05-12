@@ -1,12 +1,17 @@
 import { Title } from "components/atoms/Title";
 import { PropsWithChildren } from "react";
 import style from "./TodoTitle.module.scss";
+import { PropsWithClassName } from "types";
 
-type TodoTitleProps = PropsWithChildren;
+type TodoTitleProps = PropsWithChildren & PropsWithClassName;
 
-const TodoTitle: React.FC<TodoTitleProps> = ({ children }) => {
+const TodoTitle: React.FC<TodoTitleProps> = ({ children, className }) => {
+  const combinedClasses = className
+    ? `${style.todoTitle} ${className}`
+    : style.todoTitle;
+
   return (
-    <div className={style.todoTitle}>
+    <div className={combinedClasses}>
       <Title>{children}</Title>
     </div>
   );

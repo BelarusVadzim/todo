@@ -1,9 +1,19 @@
-import { TodoTitle } from "components/molecules";
 import style from "./TodoList.module.scss";
+import {
+  NoteEditor,
+  TodoItemsList,
+  TodoListFooter,
+  TodoTitle,
+} from "components/molecules";
 
 const TodoList: React.FC = () => (
   <div className={style.todoList}>
-    <TodoTitle>TODO</TodoTitle>
+    <div className={style.fixedHeader}>
+      <TodoTitle className={style.todoTtitle}>TODO</TodoTitle>
+      <NoteEditor className={style.noteEditor} />
+    </div>
+    <TodoItemsList />
+    <TodoListFooter />
   </div>
 );
 

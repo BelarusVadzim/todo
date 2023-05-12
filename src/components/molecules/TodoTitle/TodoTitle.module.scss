@@ -1,8 +1,5 @@
 @import 'src/variables.scss';
 
 .todoTitle {
-  composes: container from "~/src/styles/container.scss";
-
-  border: solid 1px;
 }
 
