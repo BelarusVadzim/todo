@@ -1,0 +1,29 @@
+@import 'src/variables.scss';
+
+$menu-font-size: 0.9rem;
+
+.todoItemsListMenu {
+  height: 3rem;
+  width: 100%;
+  vertical-align: middle;
+  display: flex;
+  justify-content:space-between;
+}
+
+.label {
+  display: flex !important;
+  min-width: 4rem;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1.5rem;
+  font-size: $menu-font-size;
+}
+
+.button {
+  display: flex !important;
+  min-width: 4rem;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1.5rem;
+  font-size: $menu-font-size !important;
+}

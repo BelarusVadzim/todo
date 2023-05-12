@@ -1,8 +1,6 @@
 @import 'src/variables.scss';
 
 .title {
-  composes: container from "~/src/styles/container.scss";
-
   border: none;
   color: rgb(255, 255, 255);
   cursor: default;

@@ -2,7 +2,7 @@ import style from "./Textbox.module.scss";
 import { useCallback, useState } from "react";
 
 type TextboxProps = {
-  onReturn: (text: string) => void;
+  onReturn?: (text: string) => void;
 };
 
 const EnterKey = "Enter";
@@ -13,7 +13,7 @@ const Textbox: React.FC<TextboxProps> = ({ onReturn }) => {
   const keyDownHandler = useCallback(
     (key: string, text: string) => {
       if (EnterKey === key) {
-        onReturn(text);
+        onReturn && onReturn(text);
         setText("");
       }
     },
@@ -22,6 +22,7 @@ const Textbox: React.FC<TextboxProps> = ({ onReturn }) => {
 
   return (
     <input
+      type="text"
       className={style.textbox}
       onChange={(ChangeEventArg) => setText(ChangeEventArg.target.value)}
       onKeyDown={(keyboardEventArg) =>
@@ -31,6 +32,7 @@ const Textbox: React.FC<TextboxProps> = ({ onReturn }) => {
         )
       }
       value={text}
+      maxLength={50}
     />
   );
 };

@@ -1,0 +1,47 @@
+@import 'src/variables.scss';
+
+$active-text-color: $primary-font-color;
+$completed-text-color: $secondary-font-color;
+$item-border-color: $inactive-color;
+
+.todoItem {
+  height: 3rem;
+  width: 100%;
+  vertical-align: middle;
+  display: flex;
+  border-bottom: 1px solid $item-border-color;
+}
+
+.checkbox {
+  display: flex !important;
+  min-width: 4rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.label {
+  color: $active-text-color;
+  font-size: 1rem;
+  display: flex !important;
+  white-space:nowrap; 
+  overflow:hidden; 
+  align-items: center;
+  flex: 1;
+  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 60%, rgba(0,0,0,0));
+  mask-image: linear-gradient(to right, rgba(0,0,0,1) 90%, rgba(0,0,0,0));
+}
+
+.label_lineThrough {
+  @extend .label;
+  text-decoration: line-through;
+  color: lighten($active-text-color, 50%);
+}
+
+.closeButton {
+  display: flex !important;
+  min-width: 4rem;
+  align-items: center;
+  justify-content: center;
+}
+
+
