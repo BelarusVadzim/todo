@@ -26,5 +26,4 @@ const TodoItem: React.FC<TodoItemProps> = ({ note }) => {
   );
 };
 
-//export default TodoItem;
 export default SortableElement<TodoItemProps>(TodoItem);
