@@ -2,9 +2,10 @@
 
 .todoListFooter{
     display: flex;
-min-height: 4rem;
-justify-content: center;
-align-items: center;
+    min-height: 4rem;
+    justify-content: center;
+    align-items: center;
+    font-size: $todoListFooter-font-size;
 }
 
 

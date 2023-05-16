@@ -1,4 +1,5 @@
 export type TodoNote = {
-    done: boolean;
+    id?: number;
+    done?: boolean;
     text: string;
 }

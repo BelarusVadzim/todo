@@ -1,9 +1,8 @@
-import { useEffect, useReducer } from "react";
 import style from "./Checkbox.module.scss";
 
 type CheckboxProps = {
   checked?: boolean;
-  onToggle?: (value: boolean) => void;
+  onToggle?: () => void;
   extendStyleClass?: string;
 };
 
@@ -12,20 +11,14 @@ const Label: React.FC<CheckboxProps> = ({
   onToggle,
   extendStyleClass,
 }) => {
-  const [isChecked, toggle] = useReducer((isChecked) => !isChecked, checked);
+  const click = () => onToggle && onToggle();
 
-  useEffect(() => onToggle && onToggle(isChecked), [isChecked, onToggle]);
-
-  const materialIconName = isChecked
-    ? "check_circle"
-    : "radio_button_unchecked";
-
-  let className = isChecked ? style.checkbox_checked : style.checkbox_unchecked;
-
+  const materialIconName = checked ? "check_circle" : "radio_button_unchecked";
+  let className = checked ? style.checkbox_checked : style.checkbox_unchecked;
   className = extendStyleClass ? `${className} ${extendStyleClass}` : className;
 
   return (
-    <div className={`material-icons ${className}`} onClick={toggle}>
+    <div className={`material-icons ${className}`} onClick={click}>
       {materialIconName}
     </div>
   );

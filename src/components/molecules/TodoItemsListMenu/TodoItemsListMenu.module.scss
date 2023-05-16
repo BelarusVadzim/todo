@@ -1,29 +1,37 @@
 @import 'src/variables.scss';
 
-$menu-font-size: 0.9rem;
+.menuItem{
+  display: flex !important;
+  flex: 1 1;
+  align-items: center;
+  justify-content: center;
+  font-size: $todoItemsListMenu-font-size !important;
+}
 
 .todoItemsListMenu {
-  height: 3rem;
-  width: 100%;
+  height: $todoItemsListMenu-height;
   vertical-align: middle;
   display: flex;
-  justify-content:space-between;
+  justify-content: space-around;
 }
 
 .label {
-  display: flex !important;
-  min-width: 4rem;
-  align-items: center;
-  justify-content: center;
+  @extend .menuItem;
+
+  justify-content: left;
   margin-left: 1.5rem;
-  font-size: $menu-font-size;
+}
+
+.filterSection {
+  @extend .menuItem;
+
+  min-width: 7.5rem;
+  justify-content:space-evenly;
 }
 
 .button {
-  display: flex !important;
-  min-width: 4rem;
-  align-items: center;
-  justify-content: center;
+  @extend .menuItem;
+
+  justify-content: right;
   margin-right: 1.5rem;
-  font-size: $menu-font-size !important;
 }

@@ -5,19 +5,28 @@ import { PropsWithClassName } from "types";
 type LabelProps = PropsWithChildren &
   PropsWithClassName & {
     lineThrough?: boolean;
+    draggable?: boolean;
   };
 
 const Label: React.FC<LabelProps> = ({
   children,
   lineThrough,
   className = "",
+  draggable,
 }) => {
   let combinedClassName = lineThrough ? style.label_lineThrough : style.label;
   combinedClassName = className
     ? `${combinedClassName} ${className}`
     : combinedClassName;
 
-  return <div className={combinedClassName}>{children}</div>;
+  return (
+    <div
+      {...(draggable ? { "data-draggable": "true" } : {})}
+      className={combinedClassName}
+    >
+      {children}
+    </div>
+  );
 };
 
 export default Label;

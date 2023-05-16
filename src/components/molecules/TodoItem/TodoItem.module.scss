@@ -2,7 +2,7 @@
 
 $active-text-color: $primary-font-color;
 $completed-text-color: $secondary-font-color;
-$item-border-color: $inactive-color;
+
 
 .todoItem {
   height: 3rem;
@@ -27,6 +27,7 @@ $item-border-color: $inactive-color;
   overflow:hidden; 
   align-items: center;
   flex: 1;
+  cursor:move;
   -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 60%, rgba(0,0,0,0));
   mask-image: linear-gradient(to right, rgba(0,0,0,1) 90%, rgba(0,0,0,0));
 }

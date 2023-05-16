@@ -1,13 +1,12 @@
 @import 'src/variables.scss';
 
-$menu-font-size: 0.9rem;
-
 .filterSection {
-  display: flex !important;
-  min-width: 10rem;
-  align-items: center;
-  justify-content:space-between;
-  font-size: $menu-font-size;
+  //display: flex !important;
+  // flex-grow: 1;
+  // //min-width: 10rem;
+  // align-items: center;
+  // justify-content:space-evenly;
+  // font-size: $todoItemsListMenu-font-size;
 }
 
 .radioButton {
@@ -15,5 +14,6 @@ $menu-font-size: 0.9rem;
   min-width: 1rem;
   align-items: center;
   justify-content: center;
-  font-size: $menu-font-size !important;
+  font-size: $todoItemsListMenu-font-size !important;
+  margin: 1rem 0;
 }
