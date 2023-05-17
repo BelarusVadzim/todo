@@ -10,12 +10,9 @@ type TodoItemsSectionProps = PropsWithClassName & {
 const TodoItemsSection: React.FC<TodoItemsSectionProps> = ({ todoItems }) => (
   <div className={style.todoList}>
     {todoItems.map((value, index) => (
-      // <TodoItem key={i} note={item} />
       <TodoItem key={`item-${index}`} index={index} note={value} />
     ))}
   </div>
 );
-
-// export default TodoItemsSection;
 
 export default SortableContainer<TodoItemsSectionProps>(TodoItemsSection);
