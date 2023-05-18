@@ -1,50 +1,45 @@
 import style from "./TodoItemsList.module.scss";
 import { TodoItemsSection } from "../TodoItemsSection";
-import { TodoNote } from "types";
 import { TodoItemsListMenu } from "../TodoItemsListMenu";
 import { arrayMoveImmutable } from "array-move";
-import { useState } from "react";
+import { useEffect } from "react";
 import { SortEvent, SortEventWithTag } from "react-sortable-hoc";
+import { useDataService } from "hooks";
 
 type SortEndArg = { oldIndex: number; newIndex: number };
 
-const todoItems: TodoNote[] = [
-  {
-    id: 1,
-    done: true,
-    text: "item1 item1 item1item1item1item1item1 item1 item1 item1item1item1item1item1item1 item1 item1item1item1item1item1item1 item1 item1item1item1item1item1",
-  },
-  {
-    id: 2,
-    done: false,
-    text: "item2 item1 item1item1item1item1item1 item1 item1 item1item1item1item1item1item1 item1 item1item1item1item1item1",
-  },
-  { id: 3, done: false, text: "item3 item1 item1item1item1item1item1" },
-  { id: 4, done: false, text: "item4 item1 item1item1item1item1item1" },
-  { id: 5, done: false, text: "item5 item1 item1item1item1item1item1" },
-  { id: 6, done: false, text: "item6 item1 item1item1item1item1item1" },
-];
-
 const TodoItemsList: React.FC = () => {
-  console.log("TodoItemsList");
-  const [items, setItems] = useState(todoItems);
+  const {
+    isAppInitialised,
+    todosState,
+    dispatchGetTodoList,
+    dispatchSetTodoList,
+  } = useDataService();
 
   const onSortEnd = ({ oldIndex, newIndex }: SortEndArg) => {
-    setItems((prevItem) => arrayMoveImmutable(prevItem, oldIndex, newIndex));
+    const todoList = arrayMoveImmutable(todosState, oldIndex, newIndex);
+    dispatchSetTodoList(todoList);
   };
+
+  useEffect(() => {
+    console.log("useEffect");
+    !isAppInitialised && dispatchGetTodoList();
+  }, [dispatchGetTodoList, isAppInitialised]);
+
   const checkIsElementDraggable = (element: Element) =>
     !!element.getAttribute("data-draggable");
   const shouldCancelDrag = (event: SortEvent | SortEventWithTag) =>
-    items.length < 2 || !checkIsElementDraggable(event.target as Element);
+    todosState.length < 2 || !checkIsElementDraggable(event.target as Element);
+
+  console.log(todosState);
 
   return (
     <div className={style.todoItemsList}>
       <TodoItemsSection
-        todoItems={items}
         onSortEnd={onSortEnd}
         shouldCancelStart={shouldCancelDrag}
       />
-      <TodoItemsListMenu itemsLeft={items.length} />
+      <TodoItemsListMenu />
     </div>
   );
 };

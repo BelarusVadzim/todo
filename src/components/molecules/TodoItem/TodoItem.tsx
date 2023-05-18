@@ -2,16 +2,22 @@ import { Button, Checkbox, Label } from "components/atoms";
 import style from "./TodoItem.module.scss";
 import { TodoNote } from "types";
 import { SortableElement } from "react-sortable-hoc";
-import { useCallback } from "react";
+import { useDataService } from "hooks";
 
 export type TodoItemProps = {
   note: TodoNote;
 };
 
 const TodoItem: React.FC<TodoItemProps> = ({ note }) => {
+  const { dispatchEditTodoItem, dispatchDeleteTodoItem } = useDataService();
+
   const labelClass = note.done ? style.label_lineThrough : style.label;
-  const deleteButtonClick = () => alert(`delete item ${note.id}`);
-  const checkBoxToggle = useCallback(() => alert(`item toggle`), []);
+  const deleteButtonClick = () => {
+    console.log(note);
+    note.id && dispatchDeleteTodoItem(note.id);
+  };
+  const checkBoxToggle = () =>
+    dispatchEditTodoItem({ ...note, done: !note.done });
   console.log("item");
 
   return (

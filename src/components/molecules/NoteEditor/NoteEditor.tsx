@@ -1,6 +1,7 @@
 import { Textbox } from "components/atoms";
 import style from "./NoteEditor.module.scss";
 import { PropsWithClassName, TodoNote } from "types";
+import { useDataService } from "hooks";
 
 type NoteEditorProps = PropsWithClassName & {
   note?: TodoNote;
@@ -8,8 +9,13 @@ type NoteEditorProps = PropsWithClassName & {
 
 const NoteEditor: React.FC<NoteEditorProps> = ({ className = "", note }) => {
   const combinedClassNames = `${style.noteEditor} ${className}`;
-  const editFinished = () =>
-    note ? alert(`item ${note.id} edited`) : alert(`new item created`);
+
+  const { dispatchCreateNewTodoItem, dispatchEditTodoItem } = useDataService();
+
+  const editFinished = (text: string) =>
+    note
+      ? dispatchEditTodoItem({ ...note, text })
+      : dispatchCreateNewTodoItem(text);
 
   return (
     <div className={combinedClassNames}>

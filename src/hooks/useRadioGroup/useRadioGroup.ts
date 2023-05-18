@@ -15,7 +15,6 @@ const useRadioGroup = (groupName: string, onToggle: (value: string) => void) => 
 
   const createNewRadioButton = (value: string, selected?: boolean): RadioButtonProps => {
     const id = newId.toString();
-    console.log(newId);
     newId++;
 
     if (selected) startValue = value;

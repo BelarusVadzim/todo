@@ -1,19 +1,23 @@
 import { Button, Label } from "components/atoms";
 import style from "./TodoItemsListMenu.module.scss";
 import { TodoItemsListFilterSection } from "../TodoItemsListFilterSection";
+import { useDataService } from "hooks";
 
-type TodoItemProps = {
-  itemsLeft: number;
-};
-
-const TodoItemsListMenu: React.FC<TodoItemProps> = ({ itemsLeft }) => {
-  const amount = itemsLeft.toString();
+const TodoItemsListMenu: React.FC = () => {
+  const { dispatchGetTodoList, todosState, dispatchDeleteCompletedTodos } =
+    useDataService();
+  const filterChanged = (filter: string) => dispatchGetTodoList(filter);
+  const buttonClearClick = () => dispatchDeleteCompletedTodos();
 
   return (
     <div className={style.todoItemsListMenu}>
-      <Label className={style.label}>{amount} items left</Label>
-      <TodoItemsListFilterSection onFilterChanged={(val) => alert(val)} />
-      <Button className={style.button} value="Clear Completed" />
+      <Label className={style.label}>{todosState.length} items left</Label>
+      <TodoItemsListFilterSection onFilterChanged={filterChanged} />
+      <Button
+        className={style.button}
+        value="Clear Completed"
+        onClick={buttonClearClick}
+      />
     </div>
   );
 };

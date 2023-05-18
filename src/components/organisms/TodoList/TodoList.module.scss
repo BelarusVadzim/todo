@@ -1,14 +1,9 @@
 @import 'src/variables.scss';
 
 .todoList{
-  //composes: container from "~/src/styles/container.scss";
-
-  color: rgb(0, 213, 0);
   height: auto;
   width: 35rem;
   margin: 1rem;
-  //border: solid 1px blue;
-  //background-color: white;
 }
 
 .todoTtitle{
