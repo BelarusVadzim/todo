@@ -3,19 +3,48 @@
 .todoList{
   height: auto;
   max-width: 35rem;
-  margin: auto;
-  // top: 5rem;
-  
-  // left:-webkit-calc(100% - 350px);
-  // left:-moz-calc(100% - 350px);
-  // left:calc(100% - 70rem);
+  margin: 0 1rem;
 }
 
 .todoTtitle{
   margin-bottom: 3rem;
 }
 
-.noteEditor{
+.fixedHeader{
   margin-bottom: 3rem;
+  position: sticky;
+  top: 3rem;
 }
 
+.container{
+  composes: container from "~/src/styles/container.scss";
+}
+
+.parent{
+  min-width: 15rem;
+  min-height: 5rem;
+  background-color: blue;
+  //position: relative;
+  left: 1rem;
+  top: 1rem;
+}
+
+.child1{
+  min-width: 2rem;
+  min-height: 2rem;
+  background-color: rgb(93, 211, 128);
+  //left: 2rem;
+  position: absolute;
+  top: 1rem;
+}
+
+.child2{
+  min-width: 2rem;
+  min-height: 2rem;
+  background-color: rgb(211, 93, 166);
+  left: 2rem;
+  //top: 1rem;
+  position: relative;
+}
+
+// composes: container from "~/src/styles/container.scss";

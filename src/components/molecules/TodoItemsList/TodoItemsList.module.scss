@@ -1,3 +1,11 @@
 .todoItemsList{
-  composes: container from "~/src/styles/container.scss";
+  //composes: container from "~/src/styles/container.scss";
+
+  max-height: 30rem;
+  overflow: scroll;
+  //background-color: red;
+}
+
+.todoItemsList::-webkit-scrollbar {
+  display: none;
 }

@@ -41,7 +41,7 @@ const TodoItemsList: React.FC = () => {
         onSortEnd={onSortEnd}
         shouldCancelStart={shouldCancelDrag}
       />
-      <TodoItemsListMenu />
+      {/* <TodoItemsListMenu /> */}
     </div>
   );
 };

@@ -1,3 +1,4 @@
+import { TodoItemsListMenu } from "components/molecules/TodoItemsListMenu";
 import style from "./TodoList.module.scss";
 import {
   NoteEditor,
@@ -13,7 +14,14 @@ const TodoList: React.FC = () => {
         <TodoTitle className={style.todoTtitle}>TODO</TodoTitle>
         <NoteEditor className={style.noteEditor} />
       </div>
-      <TodoItemsList />
+      <div className={style.container}>
+        <TodoItemsList />
+        <TodoItemsListMenu />
+      </div>
+      <div className={style.parent}>
+        <div className={style.child1} />
+        <div className={style.child2} />
+      </div>
       <TodoListFooter />
     </div>
   );
