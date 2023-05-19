@@ -6,7 +6,7 @@ import { useDataService } from "hooks";
 const TodoItemsListMenu: React.FC = () => {
   const { dispatchGetTodoList, todosState, dispatchDeleteCompletedTodos } =
     useDataService();
-  const filterChanged = (filter: string) => dispatchGetTodoList(filter);
+  const filterChanged = (filter: string) => dispatchGetTodoList();
   const buttonClearClick = () => dispatchDeleteCompletedTodos();
 
   return (

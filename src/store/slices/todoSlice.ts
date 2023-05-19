@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import {
   createNewTodo,
   deleteTodo,
@@ -13,20 +13,16 @@ import { TodoNote } from "types";
 // const USER_ID = 'USER_ID'
 // const TEST_TEXT = 'TEST_TEX'
 
-type ISetUserType = {
-  email: string;
-  id?: string;
-};
+// type ISetUserType = {
+//   email: string;
+//   id?: string;
+// };
 
 type TodoState = {
   todos: TodoNote[];
   appInitialised: boolean;
+  filter?: string;
 };
-
-// const clearlocalStorage = (): void => {
-//   localStorage.removeItem('USERNAME_KEY')
-//   localStorage.removeItem('USER_ID')
-// }
 
 function getInitialState(): TodoState {
   return {
@@ -41,17 +37,12 @@ const todoSlice = createSlice({
   name: "todos",
   initialState,
   reducers: {
-    // deleteUser (state) {
-    //   // state.userName = ''
-    //   // state.id = ''
-    //   clearlocalStorage()
-    // },
-    // setUser (state, action: PayloadAction<ISetUserType>) {
-    //   console.log('setUser')
-    //   const { email, id } = action.payload
-    //   // state.userName = email
-    //   // state.id = id
-    // }
+    setFilter (state, action: PayloadAction<string|undefined>) {
+      console.log('setFilter');
+      console.log(action.payload);
+
+      state.filter = action.payload
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -59,41 +50,34 @@ const todoSlice = createSlice({
         console.log("getAllTodos.pending");
       })
       .addCase(getTodos.fulfilled, (state, action) => {
-        console.log(action.payload);
         console.log("getAllTodos.fulfilled");
         state.todos = action.payload;
         state.appInitialised = true;
       })
       .addCase(createNewTodo.pending, (state, action) => {
-        console.log("createNewTodo creating");
       })
       .addCase(createNewTodo.fulfilled, (state, action) => {
-        console.log("createNewTodo.fulfilled");
-        console.log(action.payload);
-        state.todos.push(action.payload);
+        state.todos = action.payload;
       })
       .addCase(setAllTodos.pending, (state, action) => {
-        console.log("setAllTodos.pending");
         state.todos = action.meta.arg;
       })
       .addCase(setAllTodos.fulfilled, (state, action) => {
-        console.log("setAllTodos.fulfilled");
         state.todos = action.payload;
       })
       .addCase(editTodo.fulfilled, (state, action) => {
-        console.log("editTodo.fulfilled");
-        const newList = state.todos.map((x) =>
-          x.id === action.payload.id 
-            ? action.payload 
-            : ({ ...x } as TodoNote)
-        );
+        // const newList = state.todos.map((x) =>
+        //   x.id === action.payload.id 
+        //     ? action.payload 
+        //     : ({ ...x } as TodoNote)
+        // );
 
-        state.todos = newList;
+        state.todos = action.payload;
       })
       .addCase(deleteTodo.fulfilled, (state, action) => {
-        const newList = state.todos.filter(x => x.id !== action.payload);
+        //const newList = state.todos.filter(x => x.id !== action.payload);
 
-        state.todos = newList;
+        state.todos = state.todos = action.payload;
       })
       .addCase(deleteCompletedTodos.fulfilled, (state, action) => {
         state.todos = action.payload;
@@ -101,4 +85,5 @@ const todoSlice = createSlice({
   },
 });
 
+export const { setFilter } = todoSlice.actions
 export default todoSlice.reducer;

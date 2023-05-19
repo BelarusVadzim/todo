@@ -5,6 +5,7 @@ import { arrayMoveImmutable } from "array-move";
 import { useEffect } from "react";
 import { SortEvent, SortEventWithTag } from "react-sortable-hoc";
 import { useDataService } from "hooks";
+import { filterTypes } from "constants/filterTypes";
 
 type SortEndArg = { oldIndex: number; newIndex: number };
 
@@ -12,6 +13,7 @@ const TodoItemsList: React.FC = () => {
   const {
     isAppInitialised,
     todosState,
+    todoFilter,
     dispatchGetTodoList,
     dispatchSetTodoList,
   } = useDataService();
@@ -22,16 +24,16 @@ const TodoItemsList: React.FC = () => {
   };
 
   useEffect(() => {
-    console.log("useEffect");
     !isAppInitialised && dispatchGetTodoList();
   }, [dispatchGetTodoList, isAppInitialised]);
 
   const checkIsElementDraggable = (element: Element) =>
     !!element.getAttribute("data-draggable");
   const shouldCancelDrag = (event: SortEvent | SortEventWithTag) =>
-    todosState.length < 2 || !checkIsElementDraggable(event.target as Element);
-
-  console.log(todosState);
+    todoFilter === filterTypes.Active ||
+    todoFilter === filterTypes.Completed ||
+    todosState.length < 2 ||
+    !checkIsElementDraggable(event.target as Element);
 
   return (
     <div className={style.todoItemsList}>

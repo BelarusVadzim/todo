@@ -11,6 +11,5 @@ export const putTodo = async (todo: TodoNote) => {
             : x
     );
     
-    console.log(todosNewList);
     await putTodos(todosNewList);
 }

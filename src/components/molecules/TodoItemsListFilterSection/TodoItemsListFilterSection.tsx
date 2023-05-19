@@ -21,7 +21,6 @@ const TodoItemsListFilterSection: React.FC<TodoItemsListFilterSectionProps> = ({
   const completedRadioButtonProps = createNewRadioButton(filterTypes.Completed);
 
   const radioButtonClassName = style.radioButton;
-
   const combinedClassNames = `${style.filterSection} ${className}`;
 
   return (

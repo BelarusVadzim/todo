@@ -6,6 +6,5 @@ export const deleteTodo = async (todoId: number) => {
 
     const newTodos = todos.filter(x => x.id !== todoId);
 
-    console.log(todos);
     await putTodos(newTodos);
 }

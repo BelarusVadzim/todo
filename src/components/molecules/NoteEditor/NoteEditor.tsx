@@ -12,10 +12,12 @@ const NoteEditor: React.FC<NoteEditorProps> = ({ className = "", note }) => {
 
   const { dispatchCreateNewTodoItem, dispatchEditTodoItem } = useDataService();
 
-  const editFinished = (text: string) =>
-    note
-      ? dispatchEditTodoItem({ ...note, text })
-      : dispatchCreateNewTodoItem(text);
+  const editFinished = (text: string) => {
+    if (text)
+      note
+        ? dispatchEditTodoItem({ ...note, text })
+        : dispatchCreateNewTodoItem(text);
+  };
 
   return (
     <div className={combinedClassNames}>

@@ -1,4 +1,5 @@
 import { useAppDispatch, useAppSelector } from "store";
+import { setFilter } from "store/slices/todoSlice";
 import {
   getTodos,
   createNewTodo,
@@ -12,8 +13,8 @@ import { TodoNote } from "types";
 const useDataService = () => {
   const appDispatch = useAppDispatch();
 
-  const dispatchGetTodoList = (filter?: string) => {
-    appDispatch(getTodos(filter));
+  const dispatchGetTodoList = () => {
+    appDispatch(getTodos());
   };
 
   const dispatchSetTodoList = (todoList: TodoNote[]) => {
@@ -32,12 +33,20 @@ const useDataService = () => {
     appDispatch(deleteTodo(todoItemId));
   };
 
+  const dispatchSetFilter= (filter?: string) => {
+    appDispatch(setFilter(filter));
+  };
+
   const dispatchDeleteCompletedTodos = () => {
     appDispatch(deleteCompletedTodos());
   };
 
   const todosState = useAppSelector((state) => {
     return state.todo.todos;
+  });
+
+  const todoFilter = useAppSelector((state) => {
+    return state.todo.filter;
   });
 
   const isAppInitialised = useAppSelector((state) => {
@@ -51,7 +60,9 @@ const useDataService = () => {
     dispatchEditTodoItem,
     dispatchDeleteTodoItem,
     dispatchDeleteCompletedTodos,
+    dispatchSetFilter,
     todosState,
+    todoFilter,
     isAppInitialised,
   };
 };

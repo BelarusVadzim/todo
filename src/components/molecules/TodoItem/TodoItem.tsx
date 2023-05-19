@@ -13,12 +13,10 @@ const TodoItem: React.FC<TodoItemProps> = ({ note }) => {
 
   const labelClass = note.done ? style.label_lineThrough : style.label;
   const deleteButtonClick = () => {
-    console.log(note);
     note.id && dispatchDeleteTodoItem(note.id);
   };
   const checkBoxToggle = () =>
     dispatchEditTodoItem({ ...note, done: !note.done });
-  console.log("item");
 
   return (
     <div className={style.todoItem}>
@@ -40,5 +38,4 @@ const TodoItem: React.FC<TodoItemProps> = ({ note }) => {
   );
 };
 
-//export default TodoItem;
 export default SortableElement<TodoItemProps>(TodoItem);

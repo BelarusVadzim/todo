@@ -5,3 +5,9 @@
   background-color: $container-color;
   filter: drop-shadow(0 0 0.2rem rgb(152, 152, 152));
 }
+
+*{
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  }

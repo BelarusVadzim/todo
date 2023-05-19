@@ -2,8 +2,13 @@
 
 .todoList{
   height: auto;
-  width: 35rem;
-  margin: 1rem;
+  max-width: 35rem;
+  margin: auto;
+  // top: 5rem;
+  
+  // left:-webkit-calc(100% - 350px);
+  // left:-moz-calc(100% - 350px);
+  // left:calc(100% - 70rem);
 }
 
 .todoTtitle{

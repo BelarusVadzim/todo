@@ -12,7 +12,6 @@ export const postTodo = async (todo: TodoNote) => {
     const newTodo = {...todo, id:newId };
     todos.push(newTodo);
     
-    console.log(todos);
     await putTodos(todos);
 
     return newTodo;
