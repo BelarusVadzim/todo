@@ -12,7 +12,10 @@ const TodoItemsListMenu: React.FC = () => {
   return (
     <div className={style.todoItemsListMenu}>
       <Label className={style.label}>{todosState.length} items left</Label>
-      <TodoItemsListFilterSection onFilterChanged={filterChanged} />
+      <TodoItemsListFilterSection
+        className={style.filterSection}
+        onFilterChanged={filterChanged}
+      />
       <Button
         className={style.button}
         value="Clear Completed"

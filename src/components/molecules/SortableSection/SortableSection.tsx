@@ -5,7 +5,7 @@ import { useDataService } from "hooks";
 
 type TodoItemsSectionProps = PropsWithClassName;
 
-const TodoItemsSection: React.FC<TodoItemsSectionProps> = () => {
+const SortableSection: React.FC<TodoItemsSectionProps> = () => {
   const { todosState } = useDataService();
 
   return (
@@ -17,4 +17,4 @@ const TodoItemsSection: React.FC<TodoItemsSectionProps> = () => {
   );
 };
 
-export default SortableContainer<TodoItemsSectionProps>(TodoItemsSection);
+export default SortableContainer<TodoItemsSectionProps>(SortableSection);

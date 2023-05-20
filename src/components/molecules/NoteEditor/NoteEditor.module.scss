@@ -5,8 +5,6 @@ $completed-text-color: $secondary-font-color;
 $item-border-color: $inactive-color;
 
 .noteEditor {
-  composes: container from "~/src/styles/container.scss";
-
   height: 3rem;
   width: 100%;
   vertical-align: middle;

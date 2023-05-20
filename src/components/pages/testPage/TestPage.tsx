@@ -9,7 +9,7 @@ const TestPage: React.FC = () => (
         <div className={style.organism}>
           <div className={style.title}>title</div>
           <div className={style.editor} />
-          <div className={style.list}>
+          <div className={style.listContainer}>
             <div className={style.scrollableArea}>
               <div className={style.item}>item1</div>
               <div className={style.item}>item 2</div>

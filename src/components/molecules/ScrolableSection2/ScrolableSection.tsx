@@ -1,15 +1,14 @@
-import style from "./TodoItemsList.module.scss";
-import { TodoItemsSection } from "../TodoItemsSection";
-import { TodoItemsListMenu } from "../TodoItemsListMenu";
+import style from "./ScrolableSection.module.scss";
 import { arrayMoveImmutable } from "array-move";
 import { useEffect } from "react";
 import { SortEvent, SortEventWithTag } from "react-sortable-hoc";
 import { useDataService } from "hooks";
 import { filterTypes } from "constants/filterTypes";
+import { SortableSection } from "../SortableSection";
 
 type SortEndArg = { oldIndex: number; newIndex: number };
 
-const TodoItemsList: React.FC = () => {
+const ScrolableSection: React.FC = () => {
   const {
     isAppInitialised,
     todosState,
@@ -36,8 +35,8 @@ const TodoItemsList: React.FC = () => {
     !checkIsElementDraggable(event.target as Element);
 
   return (
-    <div className={style.todoItemsList}>
-      <TodoItemsSection
+    <div className={style.scrolableSection}>
+      <SortableSection
         onSortEnd={onSortEnd}
         shouldCancelStart={shouldCancelDrag}
       />
@@ -46,4 +45,4 @@ const TodoItemsList: React.FC = () => {
   );
 };
 
-export default TodoItemsList;
+export default ScrolableSection;

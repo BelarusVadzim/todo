@@ -1,50 +1,30 @@
 @import 'src/variables.scss';
 
-.todoList{
-  height: auto;
-  max-width: 35rem;
-  margin: 0 1rem;
+.todoList {
+  border-left: 1rem transparent solid;
+  border-right: 1rem transparent solid;
+  margin: auto;
+  height: $todo-list-height;
+  max-width: $todo-list-max-width;
+  min-width: $todo-list-min-width;
+  position: relative;
+  top: $todo-list-top;
 }
 
 .todoTtitle{
-  margin-bottom: 3rem;
+  height: $todoTtitle-height;
+  font-size: $todoTtitle-font-size;
 }
 
-.fixedHeader{
-  margin-bottom: 3rem;
-  position: sticky;
-  top: 3rem;
-}
-
-.container{
+.noteEditor {
   composes: container from "~/src/styles/container.scss";
+
+  height: $noteEditor-height;
+  margin: 2rem 0;
 }
 
-.parent{
-  min-width: 15rem;
-  min-height: 5rem;
-  background-color: blue;
-  //position: relative;
-  left: 1rem;
-  top: 1rem;
-}
+.listContainer{
+  composes: container from "~/src/styles/container.scss";
 
-.child1{
-  min-width: 2rem;
-  min-height: 2rem;
-  background-color: rgb(93, 211, 128);
-  //left: 2rem;
-  position: absolute;
-  top: 1rem;
-}
-
-.child2{
-  min-width: 2rem;
-  min-height: 2rem;
-  background-color: rgb(211, 93, 166);
-  left: 2rem;
-  //top: 1rem;
   position: relative;
 }
-
-// composes: container from "~/src/styles/container.scss";
