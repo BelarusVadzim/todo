@@ -8,67 +8,125 @@
   z-index: -1;
 }
 
+.backgroudImage{
+  position: fixed;
+  top: 0;
+  -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+  background-image: url('~/public/nature.jpg');
+  width: 100vw;
+  height: 20rem;
+}
+
 .page {
   height: 100vh;
   width: 100vw;
   position: fixed;
-  //position: relative;
-  //margin: auto;
 }
 
 .main {
   position: relative;
-  margin: auto;
-  background-color:cornflowerblue;
-  width: 30%;
+  margin-right: auto;
+  margin-left: auto;
+  //background-color:cornflowerblue;
+  //max-width: 20%;
 }
 
 .organism {
-  background-color: orange;
+  //background-color: orange;
   
   // top: 10rem;
-  border: red solid 1px;
-  min-width: 90%;
-  //overflow: hidden;
-  margin: 0 1rem;
-  height: 30rem;
-  //overflow: hidden;
-}
-
-.list {
-  //background-color: blue;
+  border-left: 1rem transparent solid;
+  border-right: 1rem transparent solid;
+  //min-width: 90%;
+  //overflow: auto;
+  margin: auto;
+  //height: 35rem;
+  height: 100vh;
+  max-width: 30rem;
   position: relative;
-  //top: 0.5rem;
-  //border: red solid 1px;
-  background-color: aqua;
-  //overflow: hidden;
-  max-height: 100%;
-}
-
-.editor {
-  height: 3rem;
-  //position: relative;
-  //top: 0.5rem;
-  //border: red solid 1px;
-  background-color: rgb(175, 66, 117);
-  margin: 2rem 0;
+  top: 3rem;
 }
 
 .title {
   height: 4rem;
-  margin: 1rem 0;
+  font-size: 3rem;
+  //margin: 1rem 0;
   //position: relative;
   //top: 0.5rem;
   //border: red solid 1px;
-  background-color:azure;
+  //background-color:azure;
+}
 
+.editor {
+  height: 2rem;
+  //position: relative;
+  //top: 0.5rem;
+  //border: red solid 1px;
+  background-color: azure;
+  margin: 2rem 0;
+}
+
+.list {
+  position: relative;
+  //top: 0.5rem;
+  //border: red solid 1px;
+  background-color: azure;
+  //overflow: hidden;
+  max-height: calc(100% - 13rem);
+  //min-height: 10%;
+}
+
+.scrollableArea {
+  position: relative;
+  //max-height: 18.4rem;
+  max-height:  calc(100vh - 18.2rem);
+  overflow: auto;
+  //background-color:blue;
+}
+
+.scrollableArea::-webkit-scrollbar {
+  display: none;
 }
 
 .item {
-  height: 3rem;
-  background-color: rgb(195, 255, 195);
+  height: 2rem;
+  //background-color: rgb(195, 255, 195);
   //border: rgb(51, 14, 99) solid 1px;
-    border-bottom: gray solid 1px;
+  border-bottom: gray solid 1px;
+}
+
+.menuItem {
+  height: 2rem;
+  //background-color:rgb(255, 121, 248);
+}
+
+.dragLabel {
+  height: 4rem;
+  background-color:azure;
+}
+
+.checkboxArea{
+  font-size: 1.5rem !important;
+  display: inline-block;
+  position: relative;
+  width: 3rem;
+  height: 100%;
+  
+}
+
+.checkboxPosition{
+  position: relative;
+  margin: auto;
+  width: 50%;
+  top: calc(50% - 1.5rem/2);
+}
+
+.labelPosition{
+  position: relative;
+  margin: auto;
+  width: 50%;
+  top: calc(50% - 1.5rem/2);
 }
 
 
