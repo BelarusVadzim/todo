@@ -1,16 +1,16 @@
 import { TodoItem } from "components/molecules/TodoItem";
 import { PropsWithClassName } from "types";
 import { SortableContainer } from "react-sortable-hoc";
-import { useDataService } from "hooks";
+import { useTodoStateService } from "hooks";
 
 type TodoItemsSectionProps = PropsWithClassName;
 
 const SortableSection: React.FC<TodoItemsSectionProps> = () => {
-  const { todosState } = useDataService();
+  const { todos } = useTodoStateService();
 
   return (
     <div>
-      {todosState.map((value, index) => (
+      {todos.map((value, index) => (
         <TodoItem key={`item-${index}`} index={index} note={value} />
       ))}
     </div>

@@ -1,19 +1,12 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
 import { todoDbService } from "services";
-import { AppDispatch, RootState } from "store/store";
 import { TodoNote } from "types"
 
-export const editTodo = createAsyncThunk<TodoNote[], TodoNote, 
-{
-  state: RootState, 
-  dispatch?: AppDispatch
-}>(
+export const editTodo = createAsyncThunk(
   'todos/editTodo',
-  async (note: TodoNote, thunkAPI) => {
+  async (note: TodoNote) => {
     await todoDbService.putTodo(note);
     
-    const filter = thunkAPI.getState().todo.filter;
-
-    return await todoDbService.getTodosFiltered(filter);
+    return await todoDbService.getTodos();
   }
 )
