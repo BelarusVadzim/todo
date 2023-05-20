@@ -4,17 +4,14 @@ import { useRadioGroup } from "hooks";
 import { PropsWithClassName } from "types";
 import { filterTypes } from "constants/filterTypes";
 
-type TodoItemsListFilterSectionProps = PropsWithClassName & {
-  onFilterChanged: (value: string) => void;
-};
+type TodoItemsListFilterSectionProps = PropsWithClassName;
 
 const radioGroupName = "radioGroup1";
 
 const TodoItemsListFilterSection: React.FC<TodoItemsListFilterSectionProps> = ({
-  onFilterChanged,
   className = "",
 }) => {
-  const [createNewRadioButton] = useRadioGroup(radioGroupName, onFilterChanged);
+  const [createNewRadioButton] = useRadioGroup(radioGroupName);
 
   const allRadioButtonProps = createNewRadioButton(filterTypes.All, true);
   const activeRadioButtonProps = createNewRadioButton(filterTypes.Active);

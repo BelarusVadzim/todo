@@ -2,12 +2,11 @@ import { RadioButtonProps } from "components/atoms/RadioButton/RadioButton";
 import { useAppStateService } from "hooks";
 import { useEffect } from "react";
 
-const useRadioGroup = (groupName: string, onToggle: (value: string) => void) => {
+const useRadioGroup = (groupName: string) => {
   const { dispatchFilterChanged, todoFilter, isAppInitialized } = useAppStateService();
   
   const onChange = (value: string) => {
     dispatchFilterChanged(value);
-    onToggle(value);
   };
 
   let newId = 0;

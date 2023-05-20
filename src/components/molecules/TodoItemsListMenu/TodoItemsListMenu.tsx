@@ -4,18 +4,13 @@ import { TodoItemsListFilterSection } from "../TodoItemsListFilterSection";
 import { useTodoStateService } from "hooks";
 
 const TodoItemsListMenu: React.FC = () => {
-  const { dispatchTodoListLoaded, todos, dispatchCompletedTodosDeleted } =
-    useTodoStateService();
-  const filterChanged = () => dispatchTodoListLoaded();
+  const { todos, dispatchCompletedTodosDeleted } = useTodoStateService();
   const buttonClearClick = () => dispatchCompletedTodosDeleted();
 
   return (
     <div className={style.todoItemsListMenu}>
       <Label className={style.label}>{todos.length} items left</Label>
-      <TodoItemsListFilterSection
-        className={style.filterSection}
-        onFilterChanged={filterChanged}
-      />
+      <TodoItemsListFilterSection className={style.filterSection} />
       <Button
         className={style.button}
         value="Clear Completed"
