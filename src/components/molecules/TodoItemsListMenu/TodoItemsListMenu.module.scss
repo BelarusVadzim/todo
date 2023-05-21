@@ -1,6 +1,6 @@
-@import 'src/variables.scss';
+@import "src/variables.scss";
 
-.menuItem{
+.menuItem {
   display: flex !important;
   flex: 1 1;
   align-items: center;
@@ -16,22 +16,25 @@
 }
 
 .label {
-  @extend .menuItem;
 
   justify-content: left;
   margin-left: 1.5rem;
+
+  @extend .menuItem;
 }
 
 .filterSection {
-  @extend .menuItem;
 
   min-width: 7.5rem;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
+
+  @extend .menuItem;
 }
 
 .button {
-  @extend .menuItem;
 
   justify-content: right;
   margin-right: 1.5rem;
+
+  @extend .menuItem;
 }

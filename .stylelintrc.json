@@ -1,7 +1,6 @@
 {
   "extends": [
-    "stylelint-config-standard",
-    "stylelint-config-css-modules"
+    "stylelint-config-airbnb"
   ],
   "rules": {
     "selector-class-pattern": [

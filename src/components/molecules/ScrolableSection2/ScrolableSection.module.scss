@@ -1,8 +1,8 @@
-@import 'src/variables.scss';
+@import "src/variables.scss";
 
-.scrolableSection{
+.scrolableSection {
   position: relative;
-  max-height:  $scrolableSection-max-height;
+  max-height: $scrolableSection-max-height;
   overflow: auto;
 }
 
