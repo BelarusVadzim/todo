@@ -6,6 +6,6 @@ export const readyInitializeTodoState = createAsyncThunk(
   async () => {
     console.log('getTodos thunk');
 
-    return await todoDbService.getTodos();
-  }
+    return todoDbService.getTodos();
+  },
 );

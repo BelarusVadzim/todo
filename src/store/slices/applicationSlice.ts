@@ -17,13 +17,13 @@ const applicationSlice = createSlice({
   name: 'application',
   initialState,
   reducers: {
-    setFilter (state, action: PayloadAction<string|undefined>) {
+    setFilter(state, action: PayloadAction<string | undefined>) {
       state.filter = action.payload;
     },
-    setAppInitialized (state) {
+    setAppInitialized(state) {
       state.appInitialized = true;
     },
-  }
+  },
 });
 
 export const { setFilter, setAppInitialized } = applicationSlice.actions;

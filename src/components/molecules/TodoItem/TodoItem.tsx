@@ -15,7 +15,7 @@ const TodoItem: React.FC<TodoItemProps> = ({ note }) => {
 
   const labelClass = note.done ? style.labelLineThrough : style.label;
   const deleteButtonClick = () => {
-    note.id && dispatchTodoItemDeleted(note.id);
+    if (note.id) dispatchTodoItemDeleted(note.id);
   };
   const checkBoxToggle = () =>
     dispatchTodoItemEdited({ ...note, done: !note.done });

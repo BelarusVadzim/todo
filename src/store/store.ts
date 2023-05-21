@@ -4,16 +4,16 @@ import rootReducer from './reducers';
 import { type TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 
 const store = configureStore({
-  reducer: { ...rootReducer }
+  reducer: { ...rootReducer },
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
-export type RootState = ReturnType<typeof store.getState>
+export type RootState = ReturnType<typeof store.getState>;
 // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
-export type AppDispatch = typeof store.dispatch
+export type AppDispatch = typeof store.dispatch;
 
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
-type DispatchFunc = () => AppDispatch
+type DispatchFunc = () => AppDispatch;
 export const useAppDispatch: DispatchFunc = useDispatch;
 
 export default store;
