@@ -9,7 +9,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     console.log('App useEffect');
-    console.log('isAppInitialized2: ' + isAppInitialized);
+    console.log('isAppInitialized23 debug: ' + isAppInitialized);
     if (!isAppInitialized) {
       dispatchAppInitialized();
       dispatchReadyInitializeTodoState();
