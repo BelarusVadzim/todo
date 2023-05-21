@@ -1,4 +1,4 @@
-@import 'src/variables.scss';
+@import "src/variables.scss";
 
 $regular-label-color: $secondary-font-color;
 $lineThrough-label-color: $inactive-color;
@@ -13,9 +13,10 @@ $lineThrough-label-color: $inactive-color;
 }
 
 .labelLineThrough {
-  @extend .label;
 
   text-decoration: line-through;
   color: lighten($lineThrough-label-color, 10%);
+
+  @extend .label;
 }
 

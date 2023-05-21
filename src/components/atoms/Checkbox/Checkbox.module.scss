@@ -1,6 +1,6 @@
-@import 'src/variables.scss';
+@import "src/variables.scss";
 
-.checkboxBase{
+.checkboxBase {
   display: block !important;
   cursor: pointer;
   font-size: $font-size !important; /* Safari */ /* IE 10 and IE 11 */
@@ -9,21 +9,23 @@
 
 .checkboxColored {
   background: linear-gradient($primary-color, #e058ec);
-          background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .checkboxChecked {
   @extend .checkboxBase;
+
   @extend .checkboxColored;
 }
 
 .checkboxUnchecked {
-  @extend .checkboxBase;
 
   color: $inactive-color;
 
+  @extend .checkboxBase;
+
   &:hover {
     @extend .checkboxColored;
-    }
+  }
 }

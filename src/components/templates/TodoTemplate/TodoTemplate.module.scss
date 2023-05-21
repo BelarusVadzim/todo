@@ -1,4 +1,4 @@
-@import '~/src/variables.scss';
+@import "~/src/variables.scss";
 
 .background {
   position: fixed;
@@ -7,11 +7,11 @@
   z-index: -1;
 }
 
-.backgroudImage{
+.backgroudImage {
   position: fixed;
   top: 0;
   background-image: linear-gradient(to right, rgb(255 33 248 / 73%),  rgb(49 80 255 / 73%)),
-  url('~/public/nature2.jpg');
+    url("~/public/nature2.jpg");
   width: 100vw;
   height: 17rem;
 }
@@ -22,7 +22,7 @@
   position: fixed;
 }
 
-.main{
+.main {
   position: relative;
   margin-right: auto;
   margin-left: auto;

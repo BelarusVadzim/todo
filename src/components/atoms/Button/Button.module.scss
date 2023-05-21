@@ -1,4 +1,4 @@
-@import 'src/variables.scss';
+@import "src/variables.scss";
 
 .button {
   color: $secondary-font-color;
@@ -7,7 +7,7 @@
   display: inline-block;
   font-size: $font-size !important;
   
-&:hover {
-  color: rgb(80 80 80);
+  &:hover {
+    color: rgb(80 80 80);
   }
 }

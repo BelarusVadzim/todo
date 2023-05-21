@@ -1,4 +1,4 @@
-@import 'src/variables.scss';
+@import "src/variables.scss";
 
 .background {
   position: fixed;
@@ -8,12 +8,12 @@
   z-index: -1;
 }
 
-.backgroudImage{
+.backgroudImage {
   position: fixed;
   top: 0;
-  mask-image:-webkit-gradient(linear, left top, left bottom, from(rgb(0 0 0 / 100%)), to(rgb(0 0 0 / 0%)));
+  mask-image: -webkit-gradient(linear, left top, left bottom, from(rgb(0 0 0 / 100%)), to(rgb(0 0 0 / 0%)));
   mask-image: linear-gradient(to bottom, rgb(0 0 0 / 100%), rgb(0 0 0 / 0%));
-  background-image: url('~/public/nature.jpg');
+  background-image: url("~/public/nature.jpg");
   width: 100vw;
   height: 20rem;
 }
@@ -59,7 +59,7 @@
 
 .scrollableArea {
   position: relative;
-  max-height:  calc(100vh - 18.2rem);
+  max-height: calc(100vh - 18.2rem);
   overflow: auto;
 }
 
@@ -78,10 +78,10 @@
 
 .dragLabel {
   height: 4rem;
-  background-color:azure;
+  background-color: azure;
 }
 
-.checkboxArea{
+.checkboxArea {
   font-size: 1.5rem !important;
   display: inline-block;
   position: relative;
@@ -90,14 +90,14 @@
   
 }
 
-.checkboxPosition{
+.checkboxPosition {
   position: relative;
   margin: auto;
   width: 50%;
   top: calc(50% - 1.5rem/2);
 }
 
-.labelPosition{
+.labelPosition {
   position: relative;
   margin: auto;
   width: 50%;
