@@ -13,7 +13,7 @@ const TodoItem: React.FC<TodoItemProps> = ({ note }) => {
   const { dispatchTodoItemEdited, dispatchTodoItemDeleted } =
     useTodoStateService();
 
-  const labelClass = note.done ? style.label_lineThrough : style.label;
+  const labelClass = note.done ? style.labelLineThrough : style.label;
   const deleteButtonClick = () => {
     note.id && dispatchTodoItemDeleted(note.id);
   };
