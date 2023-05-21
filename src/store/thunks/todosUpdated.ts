@@ -5,6 +5,6 @@ import { TodoNote } from 'types';
 export const todosUpdated = createAsyncThunk(
   'todos/setAllTodos',
   async (todoList: TodoNote[]) => {
-    return await todoDbService.putTodos(todoList);
-  }
+    return todoDbService.putTodos(todoList);
+  },
 );

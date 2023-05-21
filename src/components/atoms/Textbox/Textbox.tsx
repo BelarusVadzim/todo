@@ -12,13 +12,13 @@ const Textbox: React.FC<TextboxProps> = ({ onReturn }) => {
   const [text, setText] = useState('');
 
   const keyDownHandler = useCallback(
-    (key: string, text: string) => {
+    (key: string, value: string) => {
       if (EnterKey === key) {
-        onReturn && onReturn(text);
+        if ( onReturn ) onReturn(value);
         setText('');
       }
     },
-    [onReturn]
+    [onReturn],
   );
 
   return (
@@ -29,7 +29,7 @@ const Textbox: React.FC<TextboxProps> = ({ onReturn }) => {
       onKeyDown={(keyboardEventArg) =>
         keyDownHandler(
           keyboardEventArg.key,
-          keyboardEventArg.currentTarget.value
+          keyboardEventArg.currentTarget.value,
         )
       }
       value={text}

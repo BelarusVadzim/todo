@@ -13,7 +13,7 @@ const useRadioGroup = (groupName: string) => {
   let filter = '';
 
   useEffect(() => {
-    !isAppInitialized && dispatchFilterChanged(filter); 
+    if (!isAppInitialized) dispatchFilterChanged(filter); 
   }, [dispatchFilterChanged, isAppInitialized, filter]);
 
   const createNewRadioButton = (value: string, selected?: boolean): RadioButtonProps => {

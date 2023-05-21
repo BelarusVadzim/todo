@@ -4,11 +4,11 @@ import { setAppInitialized, setFilter } from 'store/slices/applicationSlice';
 const useAppStateService = () => {
   const appDispatch = useAppDispatch();
 
-  const dispatchFilterChanged= (filter?: string) => {
+  const dispatchFilterChanged = (filter?: string) => {
     appDispatch(setFilter(filter));
   };
 
-  const dispatchAppInitialized= () => {
+  const dispatchAppInitialized = () => {
     appDispatch(setAppInitialized());
   };
 

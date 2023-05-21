@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/indent */
 import { filterTypes } from 'constants/filterTypes';
 import { useAppDispatch, useAppSelector } from 'store';
-import { readyInitializeTodoState, todosUpdated, } from 'store/thunks';
+import { readyInitializeTodoState, todosUpdated } from 'store/thunks';
 import { TodoNote } from 'types';
 
 const useTodoStateService = () => {
@@ -15,23 +16,24 @@ const useTodoStateService = () => {
     appDispatch(todosUpdated(todoList));
   };
 
-  const dispatchTodoItemCreated = (note: TodoNote) => { const id =  allTodos
-    .map((x) => x.id ?? 0)
-    .reduce((prev, current) => {
-      return prev <= current ? current : prev;
-    }, 0) + 1;
+  const dispatchTodoItemCreated = (note: TodoNote) => {
+    const id =  allTodos
+      .map((x) => x.id ?? 0)
+      .reduce((prev, current) => {
+        return prev <= current ? current : prev;
+      }, 0) + 1;
 
-  const newTodo: TodoNote = { ...note, id };
-  const updatedTodos = [...allTodos, newTodo];
+    const newTodo: TodoNote = { ...note, id };
+    const updatedTodos = [...allTodos, newTodo];
 
-  dispatchTodoListChanged(updatedTodos);
+    dispatchTodoListChanged(updatedTodos);
   };
 
   const dispatchTodoItemEdited = (todoItem: TodoNote) => {
     const updatedTodos = allTodos.map((x) =>
       x.id === todoItem.id 
         ? todoItem 
-        : x
+        : x,
     );
     
     dispatchTodoListChanged(updatedTodos);
