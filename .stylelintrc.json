@@ -11,5 +11,6 @@
 		}
 	],
   "import-notation" : "string"
-  }
+  },
+  "customSyntax": "postcss-scss"
 }

@@ -14,7 +14,6 @@
     "@types/react-dom": "^18.2.3",
     "array-move": "^4.0.0",
     "postcss": "^8.4.23",
-    "postcss-scss": "^4.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
@@ -22,7 +21,6 @@
     "react-scripts": "5.0.1",
     "react-sortable-hoc": "^2.0.0",
     "sass": "^1.62.1",
-    "stylelint-config-recommended": "^12.0.0",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
@@ -56,11 +54,14 @@
     "eslint-plugin-react": "^7.32.2",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.2",
+    "postcss-scss": "^4.0.6",
     "stylelint": "^15.6.2",
     "stylelint-config-css-modules": "^4.2.0",
+    "stylelint-config-recommended": "^12.0.0",
     "stylelint-config-standard": "^33.0.0"
   },
   "lint-staged": {
-        "src/**/*.{js,jsx,ts,tsx}": "eslint --cache --fix"
+    "src/**/*.{ts,tsx}": "eslint --cache --fix",
+    "*.{css,scss}": "stylelint --fix"
   }
 }
