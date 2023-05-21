@@ -1,9 +1,9 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 import {
   readyInitializeTodoState,
   todosUpdated,
-} from "store/thunks";
-import { TodoNote } from "types";
+} from 'store/thunks';
+import { TodoNote } from 'types';
 
 type TodoState = {
   todos: TodoNote[];
@@ -18,7 +18,7 @@ function getInitialState(): TodoState {
 const initialState = getInitialState();
 
 const todoSlice = createSlice({
-  name: "todos",
+  name: 'todos',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -31,7 +31,7 @@ const todoSlice = createSlice({
       })
       .addCase(todosUpdated.fulfilled, (state, action) => {
         state.todos = action.payload;
-      })
+      });
   },
 });
 

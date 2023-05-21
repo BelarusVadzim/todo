@@ -1,20 +1,21 @@
-import style from "./Textbox.module.scss";
-import { useCallback, useState } from "react";
+import React from 'react';
+import style from './Textbox.module.scss';
+import { useCallback, useState } from 'react';
 
 type TextboxProps = {
   onReturn?: (text: string) => void;
 };
 
-const EnterKey = "Enter";
+const EnterKey = 'Enter';
 
 const Textbox: React.FC<TextboxProps> = ({ onReturn }) => {
-  const [text, setText] = useState("");
+  const [text, setText] = useState('');
 
   const keyDownHandler = useCallback(
     (key: string, text: string) => {
       if (EnterKey === key) {
         onReturn && onReturn(text);
-        setText("");
+        setText('');
       }
     },
     [onReturn]

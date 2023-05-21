@@ -1,8 +1,9 @@
-import { Button, Checkbox, Label } from "components/atoms";
-import style from "./TodoItem.module.scss";
-import { TodoNote } from "types";
-import { SortableElement } from "react-sortable-hoc";
-import { useTodoStateService } from "hooks";
+import React from 'react';
+import { Button, Checkbox, Label } from 'components/atoms';
+import style from './TodoItem.module.scss';
+import { TodoNote } from 'types';
+import { SortableElement } from 'react-sortable-hoc';
+import { useTodoStateService } from 'hooks';
 
 export type TodoItemProps = {
   note: TodoNote;
@@ -32,7 +33,7 @@ const TodoItem: React.FC<TodoItemProps> = ({ note }) => {
       <Button
         glyph
         className={style.closeButton}
-        value={"close"}
+        value={'close'}
         onClick={deleteButtonClick}
       />
     </div>

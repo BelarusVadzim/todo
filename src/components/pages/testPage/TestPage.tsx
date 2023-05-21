@@ -1,4 +1,5 @@
-import style from "./TestPage.module.scss";
+import React from 'react';
+import style from './TestPage.module.scss';
 
 const TestPage: React.FC = () => (
   <>

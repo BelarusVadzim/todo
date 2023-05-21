@@ -1,10 +1,10 @@
-import { createAsyncThunk } from "@reduxjs/toolkit"
-import { todoDbService } from "services";
-import { TodoNote } from "types"
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import { todoDbService } from 'services';
+import { TodoNote } from 'types';
 
 export const todosUpdated = createAsyncThunk(
-    'todos/setAllTodos',
-    async (todoList: TodoNote[]) => {
-      return await todoDbService.putTodos(todoList);
-    }
-)
+  'todos/setAllTodos',
+  async (todoList: TodoNote[]) => {
+    return await todoDbService.putTodos(todoList);
+  }
+);

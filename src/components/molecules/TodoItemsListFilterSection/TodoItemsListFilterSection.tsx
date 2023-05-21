@@ -1,15 +1,16 @@
-import { RadioButton } from "components/atoms";
-import style from "./TodoItemsListFilterSection.module.scss";
-import { useRadioGroup } from "hooks";
-import { PropsWithClassName } from "types";
-import { filterTypes } from "constants/filterTypes";
+import React from 'react';
+import { RadioButton } from 'components/atoms';
+import style from './TodoItemsListFilterSection.module.scss';
+import { useRadioGroup } from 'hooks';
+import { PropsWithClassName } from 'types';
+import { filterTypes } from 'constants/filterTypes';
 
 type TodoItemsListFilterSectionProps = PropsWithClassName;
 
-const radioGroupName = "radioGroup1";
+const radioGroupName = 'radioGroup1';
 
 const TodoItemsListFilterSection: React.FC<TodoItemsListFilterSectionProps> = ({
-  className = "",
+  className = '',
 }) => {
   const [createNewRadioButton] = useRadioGroup(radioGroupName);
 
@@ -18,7 +19,7 @@ const TodoItemsListFilterSection: React.FC<TodoItemsListFilterSectionProps> = ({
   const completedRadioButtonProps = createNewRadioButton(filterTypes.Completed);
 
   const radioButtonClassName = style.radioButton;
-  const combinedClassNames = `${style.filterSection ?? ""} ${className}`;
+  const combinedClassNames = `${style.filterSection ?? ''} ${className}`;
 
   return (
     <div className={combinedClassNames}>
