@@ -14,7 +14,7 @@ $todo-list-min-width: 20rem;
 $todo-list-height: 100vh;
 $item-border-color: $inactive-color;
 
-$scrolableSection-max-height:  calc(100vh - $todo-item-height*11);
+$scrolableSection-max-height: calc(100vh - $todo-item-height*11);
 $noteEditor-height: 3rem;
 $todoTtitle-height: 4rem;
 $todoTtitle-font-size: 3rem;

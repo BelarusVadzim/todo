@@ -15,12 +15,10 @@
 
 .checkboxChecked {
   @extend .checkboxBase;
-
   @extend .checkboxColored;
 }
 
 .checkboxUnchecked {
-
   color: $inactive-color;
 
   @extend .checkboxBase;
