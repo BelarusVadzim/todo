@@ -1,4 +1,5 @@
-import style from "./Checkbox.module.scss";
+import React from 'react';
+import style from './Checkbox.module.scss';
 
 type CheckboxProps = {
   checked?: boolean;
@@ -13,7 +14,7 @@ const Label: React.FC<CheckboxProps> = ({
 }) => {
   const click = () => onToggle && onToggle();
 
-  const materialIconName = checked ? "check_circle" : "radio_button_unchecked";
+  const materialIconName = checked ? 'check_circle' : 'radio_button_unchecked';
   let className = checked ? style.checkbox_checked : style.checkbox_unchecked;
   className = extendStyleClass ? `${className} ${extendStyleClass}` : className;
 

@@ -1,6 +1,6 @@
-import { todoReducer as todo } from '../slices'
-import { applicationReducer as application } from '../slices'
+import { todoReducer as todo } from '../slices';
+import { applicationReducer as application } from '../slices';
 
-const rootReducer = { todo, application }
+const rootReducer = { todo, application };
 
-export default rootReducer
+export default rootReducer;

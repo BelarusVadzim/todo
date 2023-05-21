@@ -1,6 +1,6 @@
-import React, { useMemo } from "react";
-import style from "./Button.module.scss";
-import { PropsWithClassName } from "types";
+import React, { useMemo } from 'react';
+import style from './Button.module.scss';
+import { PropsWithClassName } from 'types';
 
 type ButtonProps = PropsWithClassName & {
   value: string;
@@ -15,7 +15,7 @@ const Button: React.FC<ButtonProps> = ({
   className,
 }) => {
   let combinedClasses = useMemo(
-    () => `${glyph ? "material-icons" : ""} ${style.button}`,
+    () => `${glyph ? 'material-icons' : ''} ${style.button}`,
     [glyph]
   );
 

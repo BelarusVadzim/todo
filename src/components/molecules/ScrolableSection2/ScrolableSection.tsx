@@ -1,9 +1,10 @@
-import style from "./ScrolableSection.module.scss";
-import { arrayMoveImmutable } from "array-move";
-import { SortEvent, SortEventWithTag } from "react-sortable-hoc";
-import { useAppStateService, useTodoStateService } from "hooks";
-import { filterTypes } from "constants/filterTypes";
-import { SortableSection } from "../SortableSection";
+import React from 'react';
+import style from './ScrolableSection.module.scss';
+import { arrayMoveImmutable } from 'array-move';
+import { SortEvent, SortEventWithTag } from 'react-sortable-hoc';
+import { useAppStateService, useTodoStateService } from 'hooks';
+import { filterTypes } from 'constants/filterTypes';
+import { SortableSection } from '../SortableSection';
 
 type SortEndArg = { oldIndex: number; newIndex: number };
 
@@ -18,7 +19,7 @@ const ScrolableSection: React.FC = () => {
   };
 
   const checkIsElementDraggable = (element: Element) =>
-    !!element.getAttribute("data-draggable");
+    !!element.getAttribute('data-draggable');
   const shouldCancelDrag = (event: SortEvent | SortEventWithTag) =>
     todoFilter === filterTypes.Active ||
     todoFilter === filterTypes.Completed ||

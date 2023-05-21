@@ -1,6 +1,7 @@
-import { PropsWithChildren } from "react";
-import style from "./RadioButton.module.scss";
-import { PropsWithClassName } from "types";
+import React from 'react';
+import { PropsWithChildren } from 'react';
+import style from './RadioButton.module.scss';
+import { PropsWithClassName } from 'types';
 
 export type RadioButtonProps = PropsWithChildren &
   PropsWithClassName & {
@@ -18,9 +19,9 @@ const RadioButton: React.FC<RadioButtonProps> = ({
   onChange,
   id,
   value,
-  className = "",
+  className = '',
 }) => {
-  let combinedClassName = `${style.radioButton} ${className}`;
+  const combinedClassName = `${style.radioButton} ${className}`;
 
   return (
     <label className={combinedClassName} htmlFor={id}>

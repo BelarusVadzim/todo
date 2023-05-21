@@ -1,7 +1,8 @@
-import { Title } from "components/atoms/Title";
-import { PropsWithChildren } from "react";
-import style from "./TodoTitle.module.scss";
-import { PropsWithClassName } from "types";
+import React from 'react';
+import { Title } from 'components/atoms/Title';
+import { PropsWithChildren } from 'react';
+import style from './TodoTitle.module.scss';
+import { PropsWithClassName } from 'types';
 
 type TodoTitleProps = PropsWithChildren & PropsWithClassName;
 

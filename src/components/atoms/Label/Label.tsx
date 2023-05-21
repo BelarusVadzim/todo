@@ -1,6 +1,7 @@
-import { PropsWithChildren } from "react";
-import style from "./Label.module.scss";
-import { PropsWithClassName } from "types";
+import React from 'react';
+import { PropsWithChildren } from 'react';
+import style from './Label.module.scss';
+import { PropsWithClassName } from 'types';
 
 type LabelProps = PropsWithChildren &
   PropsWithClassName & {
@@ -11,7 +12,7 @@ type LabelProps = PropsWithChildren &
 const Label: React.FC<LabelProps> = ({
   children,
   lineThrough,
-  className = "",
+  className = '',
   draggable,
 }) => {
   let combinedClassName = lineThrough ? style.label_lineThrough : style.label;
@@ -21,7 +22,7 @@ const Label: React.FC<LabelProps> = ({
 
   return (
     <div
-      {...(draggable ? { "data-draggable": "true" } : {})}
+      {...(draggable ? { 'data-draggable': 'true' } : {})}
       className={combinedClassName}
     >
       {children}

@@ -1,5 +1,5 @@
-import { PropsWithChildren } from "react";
-import style from "./Title.module.scss";
+import React, { PropsWithChildren } from 'react';
+import style from './Title.module.scss';
 
 type TitleProps = PropsWithChildren;
 

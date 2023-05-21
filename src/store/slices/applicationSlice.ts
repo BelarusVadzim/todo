@@ -1,4 +1,4 @@
-import { Action, PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 type ApplicationState = {
   appInitialized: boolean;
@@ -14,17 +14,17 @@ function getInitialState(): ApplicationState {
 const initialState = getInitialState();
 
 const applicationSlice = createSlice({
-  name: "application",
+  name: 'application',
   initialState,
   reducers: {
     setFilter (state, action: PayloadAction<string|undefined>) {
       state.filter = action.payload;
     },
-    setAppInitialized (state, action: Action) {
+    setAppInitialized (state) {
       state.appInitialized = true;
     },
   }
 });
 
-export const { setFilter, setAppInitialized } = applicationSlice.actions
+export const { setFilter, setAppInitialized } = applicationSlice.actions;
 export default applicationSlice.reducer;

@@ -1,7 +1,8 @@
-import { Button, Label } from "components/atoms";
-import style from "./TodoItemsListMenu.module.scss";
-import { TodoItemsListFilterSection } from "../TodoItemsListFilterSection";
-import { useTodoStateService } from "hooks";
+import React from 'react';
+import { Button, Label } from 'components/atoms';
+import style from './TodoItemsListMenu.module.scss';
+import { TodoItemsListFilterSection } from '../TodoItemsListFilterSection';
+import { useTodoStateService } from 'hooks';
 
 const TodoItemsListMenu: React.FC = () => {
   const { todos, dispatchCompletedTodosDeleted } = useTodoStateService();

@@ -1,7 +1,7 @@
-import { putTodos } from "./putTodos";
-import { getTodos } from "./getTodos";
+import { putTodos } from './putTodos';
+import { getTodos } from './getTodos';
 
 export const todoDbService = {
-    putTodos,
-    getTodos,
-}
+  putTodos,
+  getTodos,
+};

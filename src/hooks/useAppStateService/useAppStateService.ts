@@ -1,5 +1,5 @@
-import { useAppDispatch, useAppSelector } from "store";
-import { setAppInitialized, setFilter } from "store/slices/applicationSlice";
+import { useAppDispatch, useAppSelector } from 'store';
+import { setAppInitialized, setFilter } from 'store/slices/applicationSlice';
 
 const useAppStateService = () => {
   const appDispatch = useAppDispatch();
@@ -8,7 +8,7 @@ const useAppStateService = () => {
     appDispatch(setFilter(filter));
   };
 
-  const dispatchAppInitialized= (filter?: string) => {
+  const dispatchAppInitialized= () => {
     appDispatch(setAppInitialized());
   };
 
@@ -17,7 +17,7 @@ const useAppStateService = () => {
   });
 
   const isAppInitialized = useAppSelector((state) => {
-    return state.application.appInitialized
+    return state.application.appInitialized;
   });
 
   return {
