@@ -1,31 +1,29 @@
 @import 'src/variables.scss';
 
-.checkbox_base{
+.checkboxBase{
   display: block !important;
   cursor: pointer;
-  font-size: $font-size !important;
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
+  font-size: $font-size !important; /* Safari */ /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
 }
 
-.checkbox_colored {
-  background: -webkit-linear-gradient($primary-color, #e058ec);
-  -webkit-background-clip: text;
+.checkboxColored {
+  background: linear-gradient($primary-color, #e058ec);
           background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.checkbox_checked {
-  @extend .checkbox_base;
-  @extend .checkbox_colored;
+.checkboxChecked {
+  @extend .checkboxBase;
+  @extend .checkboxColored;
 }
 
-.checkbox_unchecked {
-  @extend .checkbox_base;
+.checkboxUnchecked {
+  @extend .checkboxBase;
+
   color: $inactive-color;
 
   &:hover {
-    @extend .checkbox_colored;
+    @extend .checkboxColored;
     }
 }

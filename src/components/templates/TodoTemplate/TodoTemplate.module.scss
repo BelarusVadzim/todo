@@ -1,4 +1,4 @@
-@import 'src/variables.scss';
+@import '~/src/variables.scss';
 
 .background {
   position: fixed;
@@ -10,9 +10,7 @@
 .backgroudImage{
   position: fixed;
   top: 0;
-  // -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
-  // mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
-  background-image: linear-gradient(to right, rgba(255, 33, 248, 0.73),  rgba(49, 80, 255, 0.73)),
+  background-image: linear-gradient(to right, rgb(255 33 248 / 73%),  rgb(49 80 255 / 73%)),
   url('~/public/nature2.jpg');
   width: 100vw;
   height: 17rem;

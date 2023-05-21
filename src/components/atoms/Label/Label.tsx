@@ -15,7 +15,7 @@ const Label: React.FC<LabelProps> = ({
   className = '',
   draggable,
 }) => {
-  let combinedClassName = lineThrough ? style.label_lineThrough : style.label;
+  let combinedClassName = lineThrough ? style.labelLineThrough : style.label;
   combinedClassName = className
     ? `${combinedClassName} ${className}`
     : combinedClassName;

@@ -15,7 +15,7 @@ const Label: React.FC<CheckboxProps> = ({
   const click = () => onToggle && onToggle();
 
   const materialIconName = checked ? 'check_circle' : 'radio_button_unchecked';
-  let className = checked ? style.checkbox_checked : style.checkbox_unchecked;
+  let className = checked ? style.checkboxChecked : style.checkboxUnchecked;
   className = extendStyleClass ? `${className} ${extendStyleClass}` : className;
 
   return (

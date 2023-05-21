@@ -28,12 +28,12 @@ $completed-text-color: $secondary-font-color;
   align-items: center;
   flex: 1;
   cursor:move;
-  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 60%, rgba(0,0,0,0));
-  mask-image: linear-gradient(to right, rgba(0,0,0,1) 90%, rgba(0,0,0,0));
+  mask-image: linear-gradient(to right, rgb(0 0 0 / 100%) 90%, rgb(0 0 0 / 0%));
 }
 
-.label_lineThrough {
+.labelLineThrough {
   @extend .label;
+
   text-decoration: line-through;
   color: lighten($active-text-color, 50%);
 }

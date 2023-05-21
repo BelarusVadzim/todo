@@ -12,8 +12,9 @@ $lineThrough-label-color: $inactive-color;
   min-width: none;
 }
 
-.label_lineThrough {
+.labelLineThrough {
   @extend .label;
+
   text-decoration: line-through;
   color: lighten($lineThrough-label-color, 10%);
 }
