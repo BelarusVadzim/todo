@@ -1,12 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {
-  createNewTodo,
-  deleteTodo,
-  editTodo,
-  getTodos,
-  setAllTodos,
+  readyInitializeTodoState,
+  todosUpdated,
 } from "store/thunks";
-import { deleteCompletedTodos } from "store/thunks/deleteCompletedTodos";
 import { TodoNote } from "types";
 
 type TodoState = {
@@ -27,27 +23,15 @@ const todoSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(getTodos.fulfilled, (state, action) => {
+      .addCase(readyInitializeTodoState.fulfilled, (state, action) => {
         state.todos = action.payload;
       })
-      .addCase(createNewTodo.fulfilled, (state, action) => {
-        state.todos = action.payload;
-      })
-      .addCase(setAllTodos.pending, (state, action) => {
+      .addCase(todosUpdated.pending, (state, action) => {
         state.todos = action.meta.arg;
       })
-      .addCase(setAllTodos.fulfilled, (state, action) => {
+      .addCase(todosUpdated.fulfilled, (state, action) => {
         state.todos = action.payload;
       })
-      .addCase(editTodo.fulfilled, (state, action) => {
-        state.todos = action.payload;
-      })
-      .addCase(deleteTodo.fulfilled, (state, action) => {
-        state.todos = state.todos = action.payload;
-      })
-      .addCase(deleteCompletedTodos.fulfilled, (state, action) => {
-        state.todos = action.payload;
-      });
   },
 });
 

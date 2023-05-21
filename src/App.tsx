@@ -1,14 +1,19 @@
 import TodoPage from "components/pages";
-import TestPage from "components/pages/testPage";
-import { useAppStateService } from "hooks";
+import { useAppStateService, useTodoStateService } from "hooks";
 import React, { useEffect } from "react";
 
 const App: React.FC = () => {
   const { isAppInitialized, dispatchAppInitialized } = useAppStateService();
+  const { dispatchReadyInitializeTodoState } = useTodoStateService();
+  console.log("App");
 
   useEffect(() => {
+    console.log("App useEffect");
     console.log("isAppInitialized2: " + isAppInitialized);
-    !isAppInitialized && dispatchAppInitialized();
+    if (!isAppInitialized) {
+      dispatchAppInitialized();
+      dispatchReadyInitializeTodoState();
+    }
   });
 
   return <TodoPage />;

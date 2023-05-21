@@ -17,7 +17,7 @@ const NoteEditor: React.FC<NoteEditorProps> = ({ className = "", note }) => {
     if (text)
       note
         ? dispatchTodoItemEdited({ ...note, text })
-        : dispatchTodoItemCreated(text);
+        : dispatchTodoItemCreated({ text });
   };
 
   return (

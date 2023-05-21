@@ -1,57 +1,74 @@
 import { filterTypes } from "constants/filterTypes";
 import { useAppDispatch, useAppSelector } from "store";
 import {
-  getTodos,
-  createNewTodo,
-  setAllTodos,
-  editTodo,
-  deleteTodo,
-  deleteCompletedTodos,
+  readyInitializeTodoState,
+  todosUpdated,
 } from "store/thunks";
 import { TodoNote } from "types";
 
 const useTodoStateService = () => {
   const appDispatch = useAppDispatch();
+  const allTodos = useAppSelector((state) => state.todo.todos);
 
-  const dispatchTodoListLoaded = () => {
-    appDispatch(getTodos());
+  const dispatchReadyInitializeTodoState = () => {
+    appDispatch(readyInitializeTodoState());
   };
 
-  const dispatchTodoListUpdated = (todoList: TodoNote[]) => {
-    appDispatch(setAllTodos(todoList));
+  const dispatchTodoListChanged = (todoList: TodoNote[]) => {
+    appDispatch(todosUpdated(todoList));
   };
 
-  const dispatchTodoItemCreated = (text: string) => {
-    appDispatch(createNewTodo({ text }));
+  const dispatchTodoItemCreated = (note: TodoNote) => {
+    const id =
+      allTodos
+        .map((x) => x.id ?? 0)
+        .reduce((prev, current) => {
+          return prev <= current ? current : prev;
+        }, 0) + 1;
+
+    const newTodo: TodoNote = { ...note, id };
+    const updatedTodos = [...allTodos, newTodo];
+
+    dispatchTodoListChanged(updatedTodos);
   };
 
   const dispatchTodoItemEdited = (todoItem: TodoNote) => {
-    appDispatch(editTodo(todoItem));
+    const updatedTodos = allTodos.map((x) =>
+        x.id === todoItem.id 
+            ? todoItem 
+            : x
+    );
+    
+    dispatchTodoListChanged(updatedTodos);
   };
 
   const dispatchTodoItemDeleted = (todoItemId: number) => {
-    appDispatch(deleteTodo(todoItemId));
+    const updatedTodos = allTodos.filter(x => x.id !== todoItemId);
+
+    dispatchTodoListChanged(updatedTodos);
   };
 
   const dispatchCompletedTodosDeleted = () => {
-    appDispatch(deleteCompletedTodos());
+    const updatedTodos = allTodos.filter(x => !x.done);
+
+    dispatchTodoListChanged(updatedTodos);
   };
 
   const todos = useAppSelector((state) => {
     const filter = state.application.filter;
     switch (filter) {
       case filterTypes.Active:
-          return state.todo.todos.filter(x => !x.done);
+        return allTodos.filter((x) => !x.done);
       case filterTypes.Completed:
-          return state.todo.todos.filter(x => x.done);
+        return allTodos.filter((x) => x.done);
       default:
-          return state.todo.todos;
+        return allTodos;
     }
   });
 
   return {
-    dispatchTodoListLoaded,
-    dispatchTodoListUpdated,
+    dispatchReadyInitializeTodoState,
+    dispatchTodoListChanged,
     dispatchTodoItemCreated,
     dispatchTodoItemEdited,
     dispatchTodoItemDeleted,

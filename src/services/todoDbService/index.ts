@@ -1,1 +1,1 @@
-export { default as todoDbService } from './todoDbService'
+export * from './todoDbService'
