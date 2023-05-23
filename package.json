@@ -31,7 +31,8 @@
     "eject": "react-scripts eject",
     "lint-fix": "eslint --fix --ext .ts,.tsx .",
     "lint:scss": "stylelint \"src/**/*.scss\"",
-    "lint:scss:fix": "stylelint \"src/**/*.scss\" --fix"
+    "lint:scss:fix": "stylelint \"src/**/*.scss\" --fix",
+    "prepare": "husky install"
   },
   "browserslist": {
     "production": [
@@ -62,6 +63,6 @@
   },
   "lint-staged": {
     "src/**/*.{ts,tsx}": "eslint --cache --fix",
-    "*.{css,scss}": "stylelint --fix"
+    "src/**/*.{css,scss}": "stylelint --fix"
   }
 }
