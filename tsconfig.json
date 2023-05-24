@@ -25,6 +25,8 @@
    }
   },
   "include": [
-    "src"
+    "src",
+    "jest.config.js",
+    "babel.config.js"
   ]
 }
