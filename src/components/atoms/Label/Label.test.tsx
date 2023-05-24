@@ -1,19 +1,19 @@
 import render  from 'react-test-renderer';
 import Label from './Label';
 
-jest.mock('./Label.module.scss', () => () => jest.fn());
+jest.mock('./Label.module.scss', () => ({ labelLineThrough: 'labelLineThroughstyle', label: 'labelStyle' }));
 
 describe('<Label />', () => {
-  it('Label should render properly', () => {
+  it('should render properly', () => {
     const tree = render
       .create(<Label>LabelChild</Label>)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  it('Label when className specified should render properly', () => {
+  it('when draggable lineThrough className specified should render properly', () => {
     const tree = render
-      .create(<Label lineThrough>LabelChild</Label>)
+      .create(<Label draggable lineThrough className='testClass'>LabelChild</Label>)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });

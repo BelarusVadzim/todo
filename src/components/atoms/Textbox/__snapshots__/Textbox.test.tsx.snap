@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Textbox /> should render properly 1`] = `
+<input
+  className="textboxStyle"
+  maxLength={50}
+  onChange={[Function]}
+  onKeyDown={[Function]}
+  type="text"
+/>
+`;

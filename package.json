@@ -26,8 +26,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "lint": "eslint --fix --ext .js,.ts,.tsx .",
-    "lint-fix": "eslint --fix --ext .js,.ts,.tsx .",
+    "lint": "eslint --ext .ts,.tsx .",
+    "lint-fix": "eslint --fix --ext .ts,.tsx .",
     "lint-style": "stylelint \"src/**/*.scss\"",
     "lint-style-fix": "stylelint \"src/**/*.scss\" --fix",
     "test": "jest --watch",

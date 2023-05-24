@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Label /> should render properly 1`] = `
+<div
+  className="labelStyle"
+>
+  LabelChild
+</div>
+`;
+
+exports[`<Label /> when draggable lineThrough className specified should render properly 1`] = `
+<div
+  className="labelLineThroughstyle testClass"
+  data-draggable="true"
+>
+  LabelChild
+</div>
+`;

@@ -24,7 +24,7 @@ const TodoItem: React.FC<TodoItemProps> = ({ note }) => {
     <div className={style.todoItem}>
       <Checkbox
         checked={note.done}
-        extendStyleClass={style.checkbox}
+        className={style.checkbox}
         onToggle={checkBoxToggle}
       />
       <Label draggable lineThrough={note.done} className={labelClass}>

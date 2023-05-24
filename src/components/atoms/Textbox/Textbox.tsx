@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import style from './Textbox.module.scss';
-import { useCallback, useState } from 'react';
 
 type TextboxProps = {
   onReturn?: (text: string) => void;
@@ -11,21 +10,18 @@ const EnterKey = 'Enter';
 const Textbox: React.FC<TextboxProps> = ({ onReturn }) => {
   const [text, setText] = useState('');
 
-  const keyDownHandler = useCallback(
-    (key: string, value: string) => {
-      if (EnterKey === key) {
-        if ( onReturn ) onReturn(value);
-        setText('');
-      }
-    },
-    [onReturn],
-  );
+  const keyDownHandler = (key: string, value: string) => {
+    if (EnterKey === key) {
+      if ( onReturn ) onReturn(value);
+      setText('');
+    }
+  };
 
   return (
     <input
       type="text"
       className={style.textbox}
-      onChange={(ChangeEventArg) => setText(ChangeEventArg.target.value)}
+      onChange={(changeEventArg) => setText(changeEventArg.target.value)}
       onKeyDown={(keyboardEventArg) =>
         keyDownHandler(
           keyboardEventArg.key,
