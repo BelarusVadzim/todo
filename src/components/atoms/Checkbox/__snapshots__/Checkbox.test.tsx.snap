@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Checkbox /> should render properly 1`] = `
+<div
+  className="material-icons checkboxUncheckedStyle"
+>
+  radio_button_unchecked
+</div>
+`;
+
+exports[`<Checkbox /> when checked and classname specified should render properly  1`] = `
+<div
+  className="material-icons checkboxCheckedStyle extClassName"
+>
+  check_circle
+</div>
+`;

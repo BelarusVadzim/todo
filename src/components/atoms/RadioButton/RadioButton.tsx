@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 import { PropsWithChildren } from 'react';
 import style from './RadioButton.module.scss';
 import { PropsWithClassName } from 'types';
@@ -7,7 +7,7 @@ export type RadioButtonProps = PropsWithChildren &
 PropsWithClassName & {
   groupName: string;
   selectedValue?: string;
-  onChange: (value: string) => void;
+  onChange?: (value: string) => void;
   id?: string;
   value: string;
 };
@@ -22,6 +22,8 @@ const RadioButton: React.FC<RadioButtonProps> = ({
   className = '',
 }) => {
   const combinedClassName = `${style.radioButton} ${className}`;
+  const inputOnChange = (val: ChangeEvent<HTMLInputElement>) => 
+    onChange && onChange(val.target.value);
 
   return (
     <label className={combinedClassName} htmlFor={id}>
@@ -31,7 +33,7 @@ const RadioButton: React.FC<RadioButtonProps> = ({
         name={groupName}
         value={value as string}
         checked={value === selectedValue}
-        onChange={(val) => onChange(val.target.value)}
+        onChange={inputOnChange}
       />
       <span>{children}</span>
     </label>

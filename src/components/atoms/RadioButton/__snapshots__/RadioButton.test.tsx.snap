@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Label /> should render properly 1`] = `
+<label
+  className="undefined className"
+>
+  <input
+    checked={false}
+    name="groupName"
+    onChange={[Function]}
+    type="radio"
+    value="value"
+  />
+  <span>
+    LabelChild
+  </span>
+</label>
+`;

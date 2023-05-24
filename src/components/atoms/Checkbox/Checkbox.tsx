@@ -1,28 +1,29 @@
 import React from 'react';
 import style from './Checkbox.module.scss';
+import { PropsWithClassName } from 'types';
 
-type CheckboxProps = {
+type CheckboxProps = PropsWithClassName & {
   checked?: boolean;
   onToggle?: () => void;
-  extendStyleClass?: string;
 };
 
-const Label: React.FC<CheckboxProps> = ({
+const Checkbox: React.FC<CheckboxProps> = ({
   checked = false,
   onToggle,
-  extendStyleClass,
+  className,
 }) => {
-  const click = () => onToggle && onToggle();
 
   const materialIconName = checked ? 'check_circle' : 'radio_button_unchecked';
-  let className = checked ? style.checkboxChecked : style.checkboxUnchecked;
-  className = extendStyleClass ? `${className} ${extendStyleClass}` : className;
+  let combinedClassName = checked 
+    ? style.checkboxChecked 
+    : style.checkboxUnchecked;
+  combinedClassName = className ? `${combinedClassName} ${className}` : combinedClassName;
 
   return (
-    <div className={`material-icons ${className}`} onClick={click}>
+    <div className={`material-icons ${combinedClassName}`} onClick={onToggle}>
       {materialIconName}
     </div>
   );
 };
 
-export default Label;
+export default Checkbox;
