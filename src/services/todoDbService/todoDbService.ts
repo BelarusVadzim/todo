@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import { putTodos } from './putTodos';
 import { getTodos } from './getTodos';
 

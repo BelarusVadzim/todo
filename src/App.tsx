@@ -5,11 +5,8 @@ import React, { useEffect } from 'react';
 const App: React.FC = () => {
   const { isAppInitialized, dispatchAppInitialized } = useAppStateService();
   const { dispatchReadyInitializeTodoState } = useTodoStateService();
-  console.log('App');
 
   useEffect(() => {
-    console.log('App useEffect');
-    console.log('isAppInitialized23 debug: ' + isAppInitialized);
     if (!isAppInitialized) {
       dispatchAppInitialized();
       dispatchReadyInitializeTodoState();

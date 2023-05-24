@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { KeyboardEvent, ChangeEvent, useState } from 'react';
 import style from './Textbox.module.scss';
-import { useCallback, useState } from 'react';
 
 type TextboxProps = {
   onReturn?: (text: string) => void;
@@ -11,27 +10,24 @@ const EnterKey = 'Enter';
 const Textbox: React.FC<TextboxProps> = ({ onReturn }) => {
   const [text, setText] = useState('');
 
-  const keyDownHandler = useCallback(
-    (key: string, value: string) => {
-      if (EnterKey === key) {
-        if ( onReturn ) onReturn(value);
-        setText('');
-      }
-    },
-    [onReturn],
-  );
+  const keyDownHandler = (keyboardEventArg: KeyboardEvent<HTMLInputElement>) => {
+    if (EnterKey === keyboardEventArg.key) {
+      if (onReturn) 
+        onReturn(keyboardEventArg.currentTarget.value);
+      setText('');
+    }
+  };
+
+  const changeHandler = (changeEventArg: ChangeEvent<HTMLInputElement>) => {
+    setText(changeEventArg.target.value);
+  };
 
   return (
     <input
       type="text"
       className={style.textbox}
-      onChange={(ChangeEventArg) => setText(ChangeEventArg.target.value)}
-      onKeyDown={(keyboardEventArg) =>
-        keyDownHandler(
-          keyboardEventArg.key,
-          keyboardEventArg.currentTarget.value,
-        )
-      }
+      onChange={changeHandler}
+      onKeyDown={keyDownHandler}
       value={text}
       maxLength={50}
     />

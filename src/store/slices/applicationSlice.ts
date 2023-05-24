@@ -8,6 +8,7 @@ type ApplicationState = {
 function getInitialState(): ApplicationState {
   return {
     appInitialized: false,
+    filter: 'All',
   };
 }
 
@@ -17,12 +18,9 @@ const applicationSlice = createSlice({
   name: 'application',
   initialState,
   reducers: {
-    setFilter(state, action: PayloadAction<string | undefined>) {
-      state.filter = action.payload;
-    },
-    setAppInitialized(state) {
-      state.appInitialized = true;
-    },
+    setFilter: (state, action: PayloadAction<string | undefined>): ApplicationState => 
+      ({ ...state, filter: action.payload }),
+    setAppInitialized: (state): ApplicationState => ({ ...state, appInitialized: true }),
   },
 });
 

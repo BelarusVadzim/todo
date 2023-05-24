@@ -18,8 +18,9 @@ const ScrolableSection: React.FC = () => {
     dispatchTodoListChanged(todoList);
   };
 
-  const checkIsElementDraggable = (element: Element) =>
-    !!element.getAttribute('data-draggable');
+  const checkIsElementDraggable = (element: Element) => {
+    return !!element.getAttribute('data-draggable');
+  };
   const shouldCancelDrag = (event: SortEvent | SortEventWithTag) =>
     todoFilter === filterTypes.Active ||
     todoFilter === filterTypes.Completed ||

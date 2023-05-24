@@ -3,9 +3,11 @@ import { filterTypes } from 'constants/filterTypes';
 import { useAppDispatch, useAppSelector } from 'store';
 import { readyInitializeTodoState, todosUpdated } from 'store/thunks';
 import { TodoNote } from 'types';
+import { getMaxTodoId } from './utils';
 
 const useTodoStateService = () => {
   const appDispatch = useAppDispatch();
+  
   const allTodos = useAppSelector((state) => state.todo.todos);
 
   const dispatchReadyInitializeTodoState = () => {
@@ -17,11 +19,7 @@ const useTodoStateService = () => {
   };
 
   const dispatchTodoItemCreated = (note: TodoNote) => {
-    const id =  allTodos
-      .map((x) => x.id ?? 0)
-      .reduce((prev, current) => {
-        return prev <= current ? current : prev;
-      }, 0) + 1;
+    const id =  getMaxTodoId(allTodos) + 1;
 
     const newTodo: TodoNote = { ...note, id };
     const updatedTodos = [...allTodos, newTodo];

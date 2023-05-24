@@ -1,11 +1,11 @@
 import React from 'react';
-import { TodoItemsListMenu } from 'components/molecules/TodoItemsListMenu';
 import style from './TodoList.module.scss';
 import {
   NoteEditor,
   ScrolableSection,
   TodoListFooter,
   TodoTitle,
+  TodoItemsListMenu,
 } from 'components/molecules';
 
 const TodoList: React.FC = () => {
